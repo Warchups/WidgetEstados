@@ -66,9 +66,9 @@ class ChangeStateWidgetSingle : AppWidgetProvider() {
 
             editor.commit()
 
-            /*val views = RemoteViews(context.packageName, R.layout.change_state_widget_single)
-            views.setTextViewText(R.id.appwidget_text, state)*/
-            
+            val views = RemoteViews(context.packageName, R.layout.change_state_widget_single)
+            views.setTextViewText(R.id.appwidget_text, state)
+
         }
     }
 

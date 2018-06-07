@@ -1,12 +1,12 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-31:12
+ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-40:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\5bc888b3f90f88660ea1315903716c02\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\0c32a15d5725403d87fdf993cbf04812\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\efffd28b8faae93340e94a858a4257d8\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:cardview-v7:27.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.0.aar\7dd19b915030ee354aecd708fb4862a7\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\471b3f0e5d76a6b16d39629ff48b19ac\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\055dc05631ad214a191dec6e57fd196e\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\cf95d9d50f5db51037b1bb0472175af0\AndroidManifest.xml:17:1-22:12
@@ -17,29 +17,27 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Jorge-Practica
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\d44da253851eb1e42cf13b2c5c5dc0f4\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\a974152ff657e2bab00a8754e5de181e\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\40b08badb38fd2d195e3ccf3f7bcaab3\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-31:12
-INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-40:12
 	package
 		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:3:5-46
 		INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-31:12
+		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-40:12
 		INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-31:12
+		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:1-40:12
 		INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:5:5-29:19
+ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:5:5-38:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\0c32a15d5725403d87fdf993cbf04812\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\0c32a15d5725403d87fdf993cbf04812\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\efffd28b8faae93340e94a858a4257d8\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\efffd28b8faae93340e94a858a4257d8\AndroidManifest.xml:22:5-26:19
 	android:supportsRtl
 		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:10:9-35
 	android:label
@@ -82,6 +80,10 @@ ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEst
 		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:27:17-65
 	android:name
 		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:26:17-58
+receiver#com.gnommostudios.widgetestados.ChangeStateWidgetSingle
+ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:29:9-37:20
+	android:name
+		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:29:19-58
 uses-sdk
 INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml
@@ -90,8 +92,8 @@ MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Jorge-Practicas\.
 MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\5bc888b3f90f88660ea1315903716c02\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\0c32a15d5725403d87fdf993cbf04812\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\0c32a15d5725403d87fdf993cbf04812\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\efffd28b8faae93340e94a858a4257d8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:26.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\efffd28b8faae93340e94a858a4257d8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.0.aar\7dd19b915030ee354aecd708fb4862a7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.1.0.aar\7dd19b915030ee354aecd708fb4862a7\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\471b3f0e5d76a6b16d39629ff48b19ac\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\471b3f0e5d76a6b16d39629ff48b19ac\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\055dc05631ad214a191dec6e57fd196e\AndroidManifest.xml:20:5-44
@@ -122,9 +124,3 @@ INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\Widget
 		INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml
-meta-data#android.support.VERSION
-ADDED from [com.android.support:cardview-v7:26.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\efffd28b8faae93340e94a858a4257d8\AndroidManifest.xml:23:9-25:38
-	android:value
-		ADDED from [com.android.support:cardview-v7:26.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\efffd28b8faae93340e94a858a4257d8\AndroidManifest.xml:25:13-35
-	android:name
-		ADDED from [com.android.support:cardview-v7:26.1.0] C:\Users\Jorge-Practicas\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.1.0.aar\efffd28b8faae93340e94a858a4257d8\AndroidManifest.xml:24:13-51

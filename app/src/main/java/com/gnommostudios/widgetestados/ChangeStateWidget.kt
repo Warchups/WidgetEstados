@@ -1,22 +1,57 @@
 package com.gnommostudios.widgetestados
 
+import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
+import android.content.ComponentName
 import android.content.Context
-import android.widget.RemoteViews
-import android.app.PendingIntent
-import android.support.v4.view.accessibility.AccessibilityEventCompat.setAction
 import android.content.Intent
+import android.content.SharedPreferences
 import android.util.Log
+import android.widget.RemoteViews
+import android.widget.Toast
 
 
 class ChangeStateWidget : AppWidgetProvider() {
 
+    private val BUTTON_1 = ":)"
+    private val BUTTON_2 = ":("
+    private val BUTTON_3 = ":D"
+
+    private var statePreferences: SharedPreferences? = null
+
+    private var state: String? = null
+
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
-        // There may be multiple widgets active, so update all of them
+
+        val thisWidget = ComponentName(context, ChangeStateWidget::class.java)
+        val allWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget)
+
         for (appWidgetId in appWidgetIds) {
-            updateAppWidget(context, appWidgetManager, appWidgetId)
+            val views = RemoteViews(context.packageName, R.layout.change_state_widget)
+
+            statePreferences = context.getSharedPreferences("states", Context.MODE_PRIVATE)
+
+            state = statePreferences!!.getString("state", "")
+
+            views.setOnClickPendingIntent(R.id.button_widget_1,
+                    getPendingSelfIntent(context, BUTTON_1))
+            views.setOnClickPendingIntent(R.id.button_widget_2,
+                    getPendingSelfIntent(context, BUTTON_2))
+            views.setOnClickPendingIntent(R.id.button_widget_3,
+                    getPendingSelfIntent(context, BUTTON_3))
+
+            //updateAppWidget(context, appWidgetManager, appWidgetId)
+            appWidgetManager.updateAppWidget(appWidgetId, views)
+
         }
+    }
+
+    private fun getPendingSelfIntent(context: Context, action: String): PendingIntent {
+        val intent = Intent(context, javaClass)
+        intent.action = action
+        Log.i("WIDGET", action)
+        return PendingIntent.getBroadcast(context, 0, intent, 0)
     }
 
     override fun onEnabled(context: Context) {
@@ -27,31 +62,74 @@ class ChangeStateWidget : AppWidgetProvider() {
         // Enter relevant functionality for when the last widget is disabled
     }
 
-    companion object {
+    override fun onReceive(context: Context, intent: Intent) {
+        super.onReceive(context, intent)
 
-        private fun getPendingSelfIntent(context: Context, action: String): PendingIntent {
-            val intent = Intent(context, javaClass)
-            intent.action = action
-            Log.i("WIDGET", action)
-            return PendingIntent.getBroadcast(context, 0, intent, 0)
-        }
+        if (intent.action == BUTTON_1 || intent.action == BUTTON_2 || intent.action == BUTTON_3) {
 
-        internal fun updateAppWidget(context: Context, appWidgetManager: AppWidgetManager,
-                                     appWidgetId: Int) {
+            statePreferences = context.getSharedPreferences("states", Context.MODE_PRIVATE)
 
-            val widgetText = context.getString(R.string.appwidget_text)
-            // Construct the RemoteViews object
-            val views = RemoteViews(context.packageName, R.layout.change_state_widget)
-            //views.setTextViewText(R.id.appwidget_text, widgetText)
-            views.setOnClickPendingIntent(R.id.button_widget_1,
-                    getPendingSelfIntent(context, "Prueba1"))
-            //var stateButton1 = findViewById(R.id.button_widget_1)
-            //var stateButton2 = findViewById(R.id.button_widget_2)
-            //var stateButton3 = findViewById(R.id.button_widget_3)
+            state = intent.action
 
-            // Instruct the widget manager to update the widget
-            appWidgetManager.updateAppWidget(appWidgetId, views)
+            //var button1 = ((context as Activity).findViewById(R.id.button_widget_1) as Button)
+
+            //var prueba1 = (context as Activity)
+
+            val editor = statePreferences!!.edit()
+
+            editor.putString("state", state)
+
+            editor.commit()
+
+            changeButtons(context)
         }
     }
+
+    private fun changeButtons(context: Context) {
+        state = statePreferences!!.getString("state", "")
+
+        when (state) {
+            ":)" -> {
+                Toast.makeText(context, "Hola", Toast.LENGTH_SHORT).show()
+                /*widgetButton1!!.isEnabled = false
+                widgetButton2!!.isEnabled = true
+                widgetButton3!!.isEnabled = true
+
+                widgetButton1!!.setBackgroundColor(Color.GREEN)
+                widgetButton2!!.setBackgroundColor(Color.parseColor("#8555"))
+                widgetButton3!!.setBackgroundColor(Color.parseColor("#8555"))*/
+            }
+            ":(" -> {
+                Toast.makeText(context, "Adios", Toast.LENGTH_SHORT).show()
+                /*widgetButton1!!.isEnabled = true
+                widgetButton2!!.isEnabled = false
+                widgetButton3!!.isEnabled = true
+
+                widgetButton1!!.setBackgroundColor(Color.parseColor("#8555"))
+                widgetButton2!!.setBackgroundColor(Color.parseColor("#8111"))
+                widgetButton3!!.setBackgroundColor(Color.parseColor("#8555"))*/
+            }
+            ":D" -> {
+                Toast.makeText(context, "Que tal?", Toast.LENGTH_SHORT).show()
+                /*widgetButton1!!.isEnabled = true
+                widgetButton2!!.isEnabled = true
+                widgetButton3!!.isEnabled = false
+
+                widgetButton1!!.setBackgroundColor(Color.parseColor("#8555"))
+                widgetButton2!!.setBackgroundColor(Color.parseColor("#8555"))
+                widgetButton3!!.setBackgroundColor(Color.parseColor("#8111"))*/
+            }
+            else -> {
+                /*widgetButton1!!.isEnabled = true
+                widgetButton2!!.isEnabled = true
+                widgetButton3!!.isEnabled = true
+
+                widgetButton1!!.setBackgroundColor(Color.parseColor("#8555"))
+                widgetButton2!!.setBackgroundColor(Color.parseColor("#8555"))
+                widgetButton3!!.setBackgroundColor(Color.parseColor("#8555"))*/
+            }
+        }
+    }
+
 }
 

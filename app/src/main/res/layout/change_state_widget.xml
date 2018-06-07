@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#ddd"
+            android:background="@color/buttonWidgetUnchecked"
             android:textColor="@android:color/black"
             android:text=":)" />
 
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#ddd"
+            android:background="@color/buttonWidgetUnchecked"
             android:textColor="@android:color/black"
             android:text=":(" />
 
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#ddd"
+            android:background="@color/buttonWidgetUnchecked"
             android:textColor="@android:color/black"
             android:text=":D" />
 

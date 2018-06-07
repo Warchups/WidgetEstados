@@ -9,6 +9,7 @@ import android.content.SharedPreferences
 import android.util.Log
 import android.widget.RemoteViews
 import android.widget.Toast
+import android.content.ComponentName
 
 class ChangeStateWidgetSingle : AppWidgetProvider() {
 
@@ -17,8 +18,6 @@ class ChangeStateWidgetSingle : AppWidgetProvider() {
     private var statePreferences: SharedPreferences? = null
 
     private var state: String? = null
-
-    private var views: RemoteViews? = null
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         // There may be multiple widgets active, so update all of them
@@ -66,10 +65,33 @@ class ChangeStateWidgetSingle : AppWidgetProvider() {
 
             editor.commit()
 
-            val views = RemoteViews(context.packageName, R.layout.change_state_widget_single)
-            views.setTextViewText(R.id.appwidget_text, state)
+            /*val views = RemoteViews(context.packageName, R.layout.change_state_widget_single)
+            views.setTextViewText(R.id.appwidget_text, state)*/
 
+            val appWidgetManager = AppWidgetManager.getInstance(context)
+
+            val thisAppWidget = ComponentName(context.packageName, ChangeStateWidgetSingle::class.java!!.name)
+            val appWidgetIds = appWidgetManager.getAppWidgetIds(thisAppWidget)
+            //appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.appwidget_text)
+
+            onUpdate(context, appWidgetManager, appWidgetIds)
+
+            /*val initialUpdateIntent = Intent(
+                    AppWidgetManager.ACTION_APPWIDGET_UPDATE)
+            initialUpdateIntent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
+            context.sendBroadcast(initialUpdateIntent)*/
         }
+
+        /*if (intent.action == AppWidgetManager.ACTION_APPWIDGET_UPDATE) {
+
+            val appWidgetManager = AppWidgetManager.getInstance(context)
+
+            val thisAppWidget = ComponentName(context.packageName, ChangeStateWidgetSingle::class.java!!.name)
+            val appWidgetIds = appWidgetManager.getAppWidgetIds(thisAppWidget)
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.appwidget_text)
+            Log.e("working :", "finally after a whole day")
+
+        }*/
     }
 
     private fun getPendingSelfIntent(context: Context, action: String): PendingIntent {

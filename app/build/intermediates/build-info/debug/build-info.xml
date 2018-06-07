@@ -5,21 +5,21 @@
     build-mode="COLD"
     density="xhdpi"
     format="10"
-    ir-eligibility="FIELD_REMOVED"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.0.1"
-    timestamp="1528376245469"
+    timestamp="1528378933554"
     token="7450042087646283677"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="20" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="21" />
+        duration="19" />
     <task
         name="verifier"
         duration="4" />
@@ -95,8 +95,8 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="FIELD_ADDED"
-        timestamp="1528376111435"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1528378804977"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\outputs\apk\debug\app-debug.apk"
@@ -104,8 +104,8 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="FIELD_REMOVED"
-        timestamp="1528376245469"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1528378933554"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_8.apk"

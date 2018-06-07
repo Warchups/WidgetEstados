@@ -10,32 +10,32 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:id="@+id/button_widget_1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/buttonWidgetUnchecked"
-            android:textColor="@android:color/black"
-            android:text=":)" />
+            android:src="@drawable/outline_call_black_18dp"
+            android:tint="@android:color/white"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/button_widget_2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/buttonWidgetUnchecked"
-            android:textColor="@android:color/black"
-            android:text=":(" />
+            android:src="@drawable/outline_call_end_black_18dp"
+            android:tint="@android:color/white"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/button_widget_3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/buttonWidgetUnchecked"
-            android:textColor="@android:color/black"
-            android:text=":D" />
+            android:src="@drawable/outline_cancel_black_18dp"
+            android:tint="@android:color/white"/>
 
     </LinearLayout>
 

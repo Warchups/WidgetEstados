@@ -6,19 +6,15 @@
     android:layout_height="match_parent"
     tools:context="com.gnommostudios.widgetestados.MainActivity">
 
-    <TextView
-        android:id="@+id/state_txt"
+    <ImageView
+        android:id="@+id/state_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:textSize="50dp"
-        android:autoSizeTextType="uniform"
-        android:textAlignment="center"
-        android:gravity="center_vertical"
-
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +44,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.70" />
 
-    <Button
+    <ImageButton
         android:id="@+id/button_state_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,13 +52,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text=":)"
+        android:src="@drawable/outline_call_black_18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_state_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-    <Button
+    <ImageButton
         android:id="@+id/button_state_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,13 +66,13 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text=":("
+        android:src="@drawable/outline_call_end_black_18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
-    <Button
+    <ImageButton
         android:id="@+id/button_state_3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,7 +80,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text=":D"
+        android:src="@drawable/outline_cancel_black_18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_state_2"

@@ -6,20 +6,18 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private var statePreferences: SharedPreferences? = null
 
-    private var stateTxt: TextView? = null
+    private var stateImage: ImageView? = null
     private var state: String? = null
 
-    private var stateButton1: Button? = null
-    private var stateButton2: Button? = null
-    private var stateButton3: Button? = null
+    private var stateButton1: ImageButton? = null
+    private var stateButton2: ImageButton? = null
+    private var stateButton3: ImageButton? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +25,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         statePreferences = getSharedPreferences("states", Context.MODE_PRIVATE)
 
-        stateTxt = findViewById(R.id.state_txt)
+        stateImage = findViewById(R.id.state_image)
 
         stateButton1 = findViewById(R.id.button_state_1)
         stateButton2 = findViewById(R.id.button_state_2)
@@ -45,12 +43,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v!!.id) {
-            R.id.button_state_1 -> state = ":)"
-            R.id.button_state_2 -> state = ":("
-            R.id.button_state_3 -> state = ":D"
-            R.id.button_widget_1 -> Log.i("MAIN", "Prueba de widget")
-            R.id.button_widget_2 -> Log.i("MAIN", "Prueba de widget")
-            R.id.button_widget_3 -> Log.i("MAIN", "Prueba de widget")
+            R.id.button_state_1 -> state = "call"
+            R.id.button_state_2 -> state = "end"
+            R.id.button_state_3 -> state = "cancel"
         }
 
         val editor = statePreferences!!.edit()
@@ -59,36 +54,45 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         editor.commit()
 
-        stateTxt!!.text = state
-
         changeButtons()
     }
 
     private fun changeButtons() {
-        state = statePreferences!!.getString("state", "")
-
-        stateTxt!!.text = state
+        state = statePreferences!!.getString("state", "end")
 
         when (state) {
-            ":)" -> {
+            "call" -> {
+                stateImage!!.setImageResource(R.drawable.baseline_call_black_18dp)
+
+                stateButton1!!.setImageResource(R.drawable.baseline_call_black_18dp)
+                stateButton2!!.setImageResource(R.drawable.outline_call_end_black_18dp)
+                stateButton3!!.setImageResource(R.drawable.outline_cancel_black_18dp)
+
                 stateButton1!!.isEnabled = false
                 stateButton2!!.isEnabled = true
                 stateButton3!!.isEnabled = true
             }
-            ":(" -> {
+            "end" -> {
+                stateImage!!.setImageResource(R.drawable.baseline_call_end_black_18dp)
+
+                stateButton1!!.setImageResource(R.drawable.outline_call_black_18dp)
+                stateButton2!!.setImageResource(R.drawable.baseline_call_end_black_18dp)
+                stateButton3!!.setImageResource(R.drawable.outline_cancel_black_18dp)
+
                 stateButton1!!.isEnabled = true
                 stateButton2!!.isEnabled = false
                 stateButton3!!.isEnabled = true
             }
-            ":D" -> {
+            "cancel" -> {
+                stateImage!!.setImageResource(R.drawable.baseline_cancel_black_18dp)
+
+                stateButton1!!.setImageResource(R.drawable.outline_call_black_18dp)
+                stateButton2!!.setImageResource(R.drawable.outline_call_end_black_18dp)
+                stateButton3!!.setImageResource(R.drawable.baseline_cancel_black_18dp)
+
                 stateButton1!!.isEnabled = true
                 stateButton2!!.isEnabled = true
                 stateButton3!!.isEnabled = false
-            }
-            else -> {
-                stateButton1!!.isEnabled = true
-                stateButton2!!.isEnabled = true
-                stateButton3!!.isEnabled = true
             }
         }
     }

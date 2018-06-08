@@ -125,6 +125,7 @@ public class PhoneCallback extends PhoneStateListener {
         super.onCallStateChanged(state, incomingNumber);
         //callStateToString(state);
         String message = callStateToString(state) + "incomingNumber: " + incomingNumber;
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
         Log.i("SERVICE", message);
     }
 

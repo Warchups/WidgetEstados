@@ -1,15 +1,11 @@
-package com.gnommostudios.widgetestados
+package com.gnommostudios.widgetestados.views.widgets
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
-import android.content.ComponentName
-import android.content.Context
-import android.content.Intent
-import android.content.SharedPreferences
-import android.util.Log
+import android.content.*
 import android.widget.RemoteViews
-import android.widget.Toast
+import com.gnommostudios.widgetestados.R
 
 
 class ChangeStateWidget : AppWidgetProvider() {
@@ -32,39 +28,40 @@ class ChangeStateWidget : AppWidgetProvider() {
 
             statePreferences = context.getSharedPreferences("states", Context.MODE_PRIVATE)
 
-            state = statePreferences!!.getString("state", "")
+            state = statePreferences!!.getString("state", "end")
 
             when (state) {
                 "call" -> {
-                    views.setImageViewResource(R.id.button_widget_1, R.drawable.baseline_call_black_18dp)
-                    views.setImageViewResource(R.id.button_widget_2, R.drawable.outline_call_end_black_18dp)
-                    views.setImageViewResource(R.id.button_widget_3, R.drawable.outline_cancel_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidget1, R.drawable.baseline_call_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidget2, R.drawable.outline_call_end_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidget3, R.drawable.outline_cancel_black_18dp)
                 }
                 "end" -> {
-                    views.setImageViewResource(R.id.button_widget_1, R.drawable.outline_call_black_18dp)
-                    views.setImageViewResource(R.id.button_widget_2, R.drawable.baseline_call_end_black_18dp)
-                    views.setImageViewResource(R.id.button_widget_3, R.drawable.outline_cancel_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidget1, R.drawable.outline_call_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidget2, R.drawable.baseline_call_end_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidget3, R.drawable.outline_cancel_black_18dp)
                 }
                 "cancel" -> {
-                    views.setImageViewResource(R.id.button_widget_1, R.drawable.outline_call_black_18dp)
-                    views.setImageViewResource(R.id.button_widget_2, R.drawable.outline_call_end_black_18dp)
-                    views.setImageViewResource(R.id.button_widget_3, R.drawable.baseline_cancel_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidget1, R.drawable.outline_call_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidget2, R.drawable.outline_call_end_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidget3, R.drawable.baseline_cancel_black_18dp)
                 }
                 else -> {
-                    views.setImageViewResource(R.id.button_widget_1, R.drawable.outline_call_black_18dp)
-                    views.setImageViewResource(R.id.button_widget_2, R.drawable.outline_call_end_black_18dp)
-                    views.setImageViewResource(R.id.button_widget_3, R.drawable.outline_cancel_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidget1, R.drawable.outline_call_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidget2, R.drawable.outline_call_end_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidget3, R.drawable.outline_cancel_black_18dp)
                 }
             }
 
-            views.setOnClickPendingIntent(R.id.button_widget_1,
+            views.setOnClickPendingIntent(R.id.buttonWidget1,
                     getPendingSelfIntent(context, BUTTON_1))
-            views.setOnClickPendingIntent(R.id.button_widget_2,
+            views.setOnClickPendingIntent(R.id.buttonWidget2,
                     getPendingSelfIntent(context, BUTTON_2))
-            views.setOnClickPendingIntent(R.id.button_widget_3,
+            views.setOnClickPendingIntent(R.id.buttonWidget3,
                     getPendingSelfIntent(context, BUTTON_3))
 
             //updateAppWidget(context, appWidgetManager, appWidgetId)
+            //context.registerReceiver(this, IntentFilter(BroadcastMessages.STATUS_UPDATED))
             appWidgetManager.updateAppWidget(appWidgetId, views)
 
         }
@@ -73,7 +70,6 @@ class ChangeStateWidget : AppWidgetProvider() {
     private fun getPendingSelfIntent(context: Context, action: String): PendingIntent {
         val intent = Intent(context, javaClass)
         intent.action = action
-        Log.i("WIDGET", action)
         return PendingIntent.getBroadcast(context, 0, intent, 0)
     }
 
@@ -87,6 +83,16 @@ class ChangeStateWidget : AppWidgetProvider() {
 
     override fun onReceive(context: Context, intent: Intent) {
         super.onReceive(context, intent)
+
+        if (intent.action == AppWidgetManager.ACTION_APPWIDGET_UPDATE) {
+            val appWidgetManager = AppWidgetManager.getInstance(context)
+
+            val thisAppWidget = ComponentName(context.packageName, ChangeStateWidget::class.java!!.name)
+            val appWidgetIds = appWidgetManager.getAppWidgetIds(thisAppWidget)
+            //appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.appwidget_text)
+
+            onUpdate(context, appWidgetManager, appWidgetIds)
+        }
 
         if (intent.action == BUTTON_1 || intent.action == BUTTON_2 || intent.action == BUTTON_3) {
 

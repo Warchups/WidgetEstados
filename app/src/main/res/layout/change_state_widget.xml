@@ -11,7 +11,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/button_widget_1"
+            android:id="@+id/buttonWidget1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -20,7 +20,7 @@
             android:tint="@android:color/white"/>
 
         <ImageButton
-            android:id="@+id/button_widget_2"
+            android:id="@+id/buttonWidget2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -29,7 +29,7 @@
             android:tint="@android:color/white"/>
 
         <ImageButton
-            android:id="@+id/button_widget_3"
+            android:id="@+id/buttonWidget3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

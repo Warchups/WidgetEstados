@@ -1772,7 +1772,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>
@@ -3069,12 +3069,12 @@ public final class R {
     public static final int blocking=0x7f070020;
     public static final int bottom=0x7f070021;
     public static final int buttonPanel=0x7f070022;
-    public static final int button_state_1=0x7f070023;
-    public static final int button_state_2=0x7f070024;
-    public static final int button_state_3=0x7f070025;
-    public static final int button_widget_1=0x7f070026;
-    public static final int button_widget_2=0x7f070027;
-    public static final int button_widget_3=0x7f070028;
+    public static final int buttonState1=0x7f070023;
+    public static final int buttonState2=0x7f070024;
+    public static final int buttonState3=0x7f070025;
+    public static final int buttonWidget1=0x7f070026;
+    public static final int buttonWidget2=0x7f070027;
+    public static final int buttonWidget3=0x7f070028;
     public static final int center=0x7f070029;
     public static final int center_horizontal=0x7f07002a;
     public static final int center_vertical=0x7f07002b;
@@ -3272,8 +3272,9 @@ public final class R {
     public static final int add_widget=0x7f0b001d;
     public static final int app_name=0x7f0b001e;
     public static final int appwidget_text=0x7f0b001f;
-    public static final int search_menu_title=0x7f0b0020;
-    public static final int status_bar_notification_info_overflow=0x7f0b0021;
+    public static final int permissions_denial=0x7f0b0020;
+    public static final int search_menu_title=0x7f0b0021;
+    public static final int status_bar_notification_info_overflow=0x7f0b0022;
   }
   public static final class style {
     public static final int AlertDialog_AppCompat=0x7f0c0000;
@@ -7934,7 +7935,7 @@ public final class R {
      * <tr><td>barrier</td><td>2</td><td></td></tr>
      * <tr><td>chains</td><td>4</td><td></td></tr>
      * <tr><td>dimensions</td><td>8</td><td></td></tr>
-     * <tr><td>direct</td><td>1</td><td>for now only direct & barriers</td></tr>
+     * <tr><td>direct</td><td>1</td><td></td></tr>
      * <tr><td>none</td><td>0</td><td></td></tr>
      * <tr><td>standard</td><td>3</td><td></td></tr>
      * </table>

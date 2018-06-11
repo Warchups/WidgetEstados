@@ -2,31 +2,71 @@
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="24"
-    build-mode="COLD"
+    build-mode="FULL"
     density="xxhdpi"
     format="10"
     plugin-version="3.0.1"
-    timestamp="1528716827611"
+    timestamp="1528725645672"
     token="7450042087646283677"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="36" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="33" />
     <task
         name="verifier"
-        duration="0" />
+        duration="11" />
+
+    <artifact
+        location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\outputs\apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1528715986010"
+        timestamp="1528725645672"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            type="SPLIT" />
         <artifact
             location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
             type="SPLIT" />
@@ -34,48 +74,32 @@
             location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\outputs\apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1528716805551"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        timestamp="1528716827611"
-        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

@@ -15,13 +15,12 @@ class TelephonyService : IntentService("TelephonyService") {
     private val mMessageReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             if (intent.extras.getBoolean("REJECT")) {
-                val tm = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
                 try {
-                    val c = Class.forName(tm.javaClass.name)
+                    val c = Class.forName(mTelephonyManager!!.javaClass.name)
                     val m = c.getDeclaredMethod("getITelephony")
                     m.isAccessible = true
 
-                    val telephonyService = m.invoke(tm) as ITelephony
+                    val telephonyService = m.invoke(mTelephonyManager) as ITelephony
 
                     telephonyService.endCall()
                 } catch (e: Exception) {

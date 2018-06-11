@@ -47,7 +47,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         buttonLocked.setOnClickListener(this)
 
         registerReceiver(mMessageReceiver, IntentFilter("MainActivity"))
+    }
 
+    override fun onResume() {
+        super.onResume()
         checkPermissions()
     }
 

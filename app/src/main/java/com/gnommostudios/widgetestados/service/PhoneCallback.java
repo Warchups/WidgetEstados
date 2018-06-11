@@ -92,7 +92,7 @@ public class PhoneCallback extends PhoneStateListener {
                 Log.i("STATE_CALL:", "OFFHOOK");
                 return "\nonCallStateChanged: CALL_STATE_OFFHOOK, ";
             default:
-                editor.putString("state", MyPhoneStates.BLOCK);
+                editor.putString("state", MyPhoneStates.LOCKED);
                 editor.apply();
 
                 context.getApplicationContext().sendBroadcast(intent);

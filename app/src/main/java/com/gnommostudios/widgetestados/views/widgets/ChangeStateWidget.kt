@@ -13,7 +13,7 @@ class ChangeStateWidget : AppWidgetProvider() {
     companion object {
         private const val BUTTON_1 = MyPhoneStates.TALKING
         private const val BUTTON_2 = MyPhoneStates.IDLE
-        private const val BUTTON_3 = MyPhoneStates.BLOCK
+        private const val BUTTON_3 = MyPhoneStates.LOCKED
     }
 
     private var statePreferences: SharedPreferences? = null
@@ -31,32 +31,32 @@ class ChangeStateWidget : AppWidgetProvider() {
 
             when (state) {
                 MyPhoneStates.TALKING -> {
-                    views.setImageViewResource(R.id.buttonWidget1, R.drawable.baseline_call_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidget2, R.drawable.outline_call_end_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidget3, R.drawable.outline_cancel_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.baseline_call_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.outline_call_end_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.outline_cancel_black_18dp)
                 }
                 MyPhoneStates.IDLE -> {
-                    views.setImageViewResource(R.id.buttonWidget1, R.drawable.outline_call_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidget2, R.drawable.baseline_call_end_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidget3, R.drawable.outline_cancel_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.outline_call_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.baseline_call_end_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.outline_cancel_black_18dp)
                 }
-                MyPhoneStates.BLOCK -> {
-                    views.setImageViewResource(R.id.buttonWidget1, R.drawable.outline_call_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidget2, R.drawable.outline_call_end_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidget3, R.drawable.baseline_cancel_black_18dp)
+                MyPhoneStates.LOCKED -> {
+                    views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.outline_call_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.outline_call_end_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.baseline_cancel_black_18dp)
                 }
                 else -> {
-                    views.setImageViewResource(R.id.buttonWidget1, R.drawable.outline_call_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidget2, R.drawable.outline_call_end_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidget3, R.drawable.outline_cancel_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.outline_call_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.outline_call_end_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.outline_cancel_black_18dp)
                 }
             }
 
-            views.setOnClickPendingIntent(R.id.buttonWidget1,
+            views.setOnClickPendingIntent(R.id.buttonWidgetTalking,
                     getPendingSelfIntent(context, BUTTON_1))
-            views.setOnClickPendingIntent(R.id.buttonWidget2,
+            views.setOnClickPendingIntent(R.id.buttonWidgetIdle,
                     getPendingSelfIntent(context, BUTTON_2))
-            views.setOnClickPendingIntent(R.id.buttonWidget3,
+            views.setOnClickPendingIntent(R.id.buttonWidgetLocked,
                     getPendingSelfIntent(context, BUTTON_3))
 
             appWidgetManager.updateAppWidget(appWidgetId, views)

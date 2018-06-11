@@ -42,9 +42,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         statePreferences = getSharedPreferences("states", Context.MODE_PRIVATE)
 
-        buttonState1.setOnClickListener(this)
-        buttonState2.setOnClickListener(this)
-        buttonState3.setOnClickListener(this)
+        buttonTalking.setOnClickListener(this)
+        buttonIdle.setOnClickListener(this)
+        buttonLocked.setOnClickListener(this)
 
         registerReceiver(mMessageReceiver, IntentFilter("MainActivity"))
 
@@ -53,9 +53,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v!!.id) {
-            R.id.buttonState1 -> state = MyPhoneStates.TALKING
-            R.id.buttonState2 -> state = MyPhoneStates.IDLE
-            R.id.buttonState3 -> state = MyPhoneStates.BLOCK
+            R.id.buttonTalking -> state = MyPhoneStates.TALKING
+            R.id.buttonIdle -> state = MyPhoneStates.IDLE
+            R.id.buttonLocked -> state = MyPhoneStates.LOCKED
         }
 
         val editor = statePreferences!!.edit()
@@ -96,35 +96,35 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             MyPhoneStates.TALKING -> {
                 stateImage.setImageResource(R.drawable.baseline_call_black_18dp)
 
-                buttonState1.setImageResource(R.drawable.baseline_call_black_18dp)
-                buttonState2.setImageResource(R.drawable.outline_call_end_black_18dp)
-                buttonState3.setImageResource(R.drawable.outline_cancel_black_18dp)
+                buttonTalking.setImageResource(R.drawable.baseline_call_black_18dp)
+                buttonIdle.setImageResource(R.drawable.outline_call_end_black_18dp)
+                buttonLocked.setImageResource(R.drawable.outline_cancel_black_18dp)
 
-                buttonState1.isEnabled = false
-                buttonState2.isEnabled = true
-                buttonState3.isEnabled = true
+                buttonTalking.isEnabled = false
+                buttonIdle.isEnabled = true
+                buttonLocked.isEnabled = true
             }
             MyPhoneStates.IDLE -> {
                 stateImage.setImageResource(R.drawable.baseline_call_end_black_18dp)
 
-                buttonState1.setImageResource(R.drawable.outline_call_black_18dp)
-                buttonState2.setImageResource(R.drawable.baseline_call_end_black_18dp)
-                buttonState3.setImageResource(R.drawable.outline_cancel_black_18dp)
+                buttonTalking.setImageResource(R.drawable.outline_call_black_18dp)
+                buttonIdle.setImageResource(R.drawable.baseline_call_end_black_18dp)
+                buttonLocked.setImageResource(R.drawable.outline_cancel_black_18dp)
 
-                buttonState1.isEnabled = true
-                buttonState2.isEnabled = false
-                buttonState3.isEnabled = true
+                buttonTalking.isEnabled = true
+                buttonIdle.isEnabled = false
+                buttonLocked.isEnabled = true
             }
-            MyPhoneStates.BLOCK -> {
+            MyPhoneStates.LOCKED -> {
                 stateImage.setImageResource(R.drawable.baseline_cancel_black_18dp)
 
-                buttonState1.setImageResource(R.drawable.outline_call_black_18dp)
-                buttonState2.setImageResource(R.drawable.outline_call_end_black_18dp)
-                buttonState3.setImageResource(R.drawable.baseline_cancel_black_18dp)
+                buttonTalking.setImageResource(R.drawable.outline_call_black_18dp)
+                buttonIdle.setImageResource(R.drawable.outline_call_end_black_18dp)
+                buttonLocked.setImageResource(R.drawable.baseline_cancel_black_18dp)
 
-                buttonState1.isEnabled = true
-                buttonState2.isEnabled = true
-                buttonState3.isEnabled = false
+                buttonTalking.isEnabled = true
+                buttonIdle.isEnabled = true
+                buttonLocked.isEnabled = false
             }
         }
     }

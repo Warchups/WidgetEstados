@@ -1,14 +1,36 @@
 package com.gnommostudios.widgetestados.service
 
 import android.app.IntentService
+import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.telephony.PhoneStateListener
 import android.telephony.TelephonyManager
 
 class TelephonyService : IntentService("TelephonyService") {
 
     private var mTelephonyManager: TelephonyManager? = null
+
+    private val mMessageReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            if (intent.extras.getBoolean("REJECT")) {
+                val tm = context.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+                try {
+                    val c = Class.forName(tm.javaClass.name)
+                    val m = c.getDeclaredMethod("getITelephony")
+                    m.isAccessible = true
+
+                    val telephonyService = m.invoke(tm) as ITelephony
+
+                    telephonyService.endCall()
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+
+            }
+        }
+    }
 
     override fun onCreate() {
         super.onCreate()
@@ -23,9 +45,11 @@ class TelephonyService : IntentService("TelephonyService") {
                 or PhoneStateListener.LISTEN_SIGNAL_STRENGTHS
                 or PhoneStateListener.LISTEN_CALL_FORWARDING_INDICATOR
                 or PhoneStateListener.LISTEN_MESSAGE_WAITING_INDICATOR)
+
+        registerReceiver(mMessageReceiver, IntentFilter("TelephonyService"))
     }
 
-    override fun onHandleIntent(p0: Intent?) {
+    override fun onHandleIntent(intent: Intent?) {
 
     }
 

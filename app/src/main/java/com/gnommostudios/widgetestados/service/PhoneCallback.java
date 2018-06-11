@@ -32,6 +32,7 @@ public class PhoneCallback extends PhoneStateListener {
     private final Context context;
 
     private SharedPreferences statePreferences;
+    private String state;
 
     //--------------------------------------------------
     // Constructor
@@ -40,6 +41,7 @@ public class PhoneCallback extends PhoneStateListener {
     PhoneCallback(Context context) {
         this.context = context;
         statePreferences = context.getSharedPreferences("states", Context.MODE_PRIVATE);
+        state = statePreferences.getString("state", MyPhoneStates.IDLE);
     }
 
     //--------------------------------------------------
@@ -66,40 +68,49 @@ public class PhoneCallback extends PhoneStateListener {
         intent.putExtra("UPDATE", true);
         SharedPreferences.Editor editor = statePreferences.edit();
 
-        switch (state) {
-            case TelephonyManager.CALL_STATE_IDLE:
-                editor.putString("state", MyPhoneStates.IDLE);
-                editor.apply();
+        if (!statePreferences.getString("state", MyPhoneStates.IDLE).equals(MyPhoneStates.LOCKED)) {
+            switch (state) {
+                case TelephonyManager.CALL_STATE_IDLE:
+                    editor.putString("state", MyPhoneStates.IDLE);
+                    editor.apply();
 
-                context.getApplicationContext().sendBroadcast(intent);
+                    context.getApplicationContext().sendBroadcast(intent);
 
-                Log.i("STATE_CALL:", "IDLE");
-                return "\nonCallStateChanged: CALL_STATE_IDLE, ";
-            case TelephonyManager.CALL_STATE_RINGING:
-                editor.putString("state", MyPhoneStates.TALKING);
-                editor.apply();
+                    Log.i("STATE_CALL:", "IDLE");
+                    return "\nonCallStateChanged: CALL_STATE_IDLE, ";
+                case TelephonyManager.CALL_STATE_RINGING:
+                    editor.putString("state", MyPhoneStates.TALKING);
+                    editor.apply();
 
-                context.getApplicationContext().sendBroadcast(intent);
+                    context.getApplicationContext().sendBroadcast(intent);
 
-                Log.i("STATE_CALL:", "RINGING");
-                return "\nonCallStateChanged: CALL_STATE_RINGING, ";
-            case TelephonyManager.CALL_STATE_OFFHOOK:
-                editor.putString("state", MyPhoneStates.TALKING);
-                editor.apply();
+                    Log.i("STATE_CALL:", "RINGING");
+                    return "\nonCallStateChanged: CALL_STATE_RINGING, ";
+                case TelephonyManager.CALL_STATE_OFFHOOK:
+                    editor.putString("state", MyPhoneStates.TALKING);
+                    editor.apply();
 
-                context.getApplicationContext().sendBroadcast(intent);
+                    context.getApplicationContext().sendBroadcast(intent);
 
-                Log.i("STATE_CALL:", "OFFHOOK");
-                return "\nonCallStateChanged: CALL_STATE_OFFHOOK, ";
-            default:
-                editor.putString("state", MyPhoneStates.LOCKED);
-                editor.apply();
+                    Log.i("STATE_CALL:", "OFFHOOK");
+                    return "\nonCallStateChanged: CALL_STATE_OFFHOOK, ";
+                default:
+                    editor.putString("state", MyPhoneStates.LOCKED);
+                    editor.apply();
 
-                context.getApplicationContext().sendBroadcast(intent);
+                    context.getApplicationContext().sendBroadcast(intent);
 
-                Log.i("STATE_CALL:", "UNKNOWN");
-                return "\nUNKNOWN_STATE: " + state + ", ";
+                    Log.i("STATE_CALL:", "UNKNOWN");
+                    return "\nUNKNOWN_STATE: " + state + ", ";
+            }
         }
+        editor.putString("state", MyPhoneStates.LOCKED);
+        editor.apply();
+
+        context.getApplicationContext().sendBroadcast(intent);
+
+        return "Locked ";
+
     }
 
     //--------------------------------------------------
@@ -153,7 +164,17 @@ public class PhoneCallback extends PhoneStateListener {
     @Override
     public void onCallStateChanged(int state, String incomingNumber) {
         super.onCallStateChanged(state, incomingNumber);
-        //callStateToString(state);
+
+        if (!incomingNumber.isEmpty()) {
+            this.state = statePreferences.getString("state", MyPhoneStates.IDLE);
+            if (this.state.equals(MyPhoneStates.LOCKED)) {
+                Intent intent = new Intent("TelephonyService");
+                intent.putExtra("REJECT", true);
+                context.getApplicationContext().sendBroadcast(intent);
+                return;
+            }
+        }
+
         String message = callStateToString(state) + "incomingNumber: " + incomingNumber;
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
         Log.i("SERVICE", message);

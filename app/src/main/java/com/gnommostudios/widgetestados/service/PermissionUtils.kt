@@ -3,7 +3,6 @@ package com.gnommostudios.widgetestados.service
 import android.Manifest
 import android.app.Activity
 import android.content.Context
-import android.content.DialogInterface
 import android.content.pm.PackageManager
 import android.os.Build
 import android.support.v7.app.AlertDialog
@@ -16,7 +15,7 @@ object PermissionUtils {
     // Permissions Methods
     //--------------------------------------------------
 
-    fun hasPermission(activity: Context, permission: String): Boolean {
+    private fun hasPermission(activity: Context, permission: String): Boolean {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             PackageManager.PERMISSION_GRANTED == activity.checkSelfPermission(permission)
         } else false
@@ -27,7 +26,7 @@ object PermissionUtils {
         builder.setTitle(R.string.app_name).setMessage(activity.getString(R.string.permissions_denial))
 
         // Add the buttons.
-        builder.setPositiveButton(android.R.string.ok) { dialog, which -> activity.finish() }
+        builder.setPositiveButton(android.R.string.ok) { _, _ -> activity.finish() }
 
         val dialog = builder.create()
         dialog.show()

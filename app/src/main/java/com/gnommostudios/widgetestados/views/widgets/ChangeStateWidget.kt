@@ -6,13 +6,15 @@ import android.appwidget.AppWidgetProvider
 import android.content.*
 import android.widget.RemoteViews
 import com.gnommostudios.widgetestados.R
-
+import com.gnommostudios.widgetestados.utils.MyPhoneStates
 
 class ChangeStateWidget : AppWidgetProvider() {
 
-    private val BUTTON_1 = "call"
-    private val BUTTON_2 = "end"
-    private val BUTTON_3 = "cancel"
+    companion object {
+        private const val BUTTON_1 = MyPhoneStates.TALKING
+        private const val BUTTON_2 = MyPhoneStates.IDLE
+        private const val BUTTON_3 = MyPhoneStates.BLOCK
+    }
 
     private var statePreferences: SharedPreferences? = null
 
@@ -20,28 +22,25 @@ class ChangeStateWidget : AppWidgetProvider() {
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
 
-        val thisWidget = ComponentName(context, ChangeStateWidget::class.java)
-        val allWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget)
-
         for (appWidgetId in appWidgetIds) {
             val views = RemoteViews(context.packageName, R.layout.change_state_widget)
 
             statePreferences = context.getSharedPreferences("states", Context.MODE_PRIVATE)
 
-            state = statePreferences!!.getString("state", "end")
+            state = statePreferences!!.getString("state", MyPhoneStates.IDLE)
 
             when (state) {
-                "call" -> {
+                MyPhoneStates.TALKING -> {
                     views.setImageViewResource(R.id.buttonWidget1, R.drawable.baseline_call_black_18dp)
                     views.setImageViewResource(R.id.buttonWidget2, R.drawable.outline_call_end_black_18dp)
                     views.setImageViewResource(R.id.buttonWidget3, R.drawable.outline_cancel_black_18dp)
                 }
-                "end" -> {
+                MyPhoneStates.IDLE -> {
                     views.setImageViewResource(R.id.buttonWidget1, R.drawable.outline_call_black_18dp)
                     views.setImageViewResource(R.id.buttonWidget2, R.drawable.baseline_call_end_black_18dp)
                     views.setImageViewResource(R.id.buttonWidget3, R.drawable.outline_cancel_black_18dp)
                 }
-                "cancel" -> {
+                MyPhoneStates.BLOCK -> {
                     views.setImageViewResource(R.id.buttonWidget1, R.drawable.outline_call_black_18dp)
                     views.setImageViewResource(R.id.buttonWidget2, R.drawable.outline_call_end_black_18dp)
                     views.setImageViewResource(R.id.buttonWidget3, R.drawable.baseline_cancel_black_18dp)
@@ -60,8 +59,6 @@ class ChangeStateWidget : AppWidgetProvider() {
             views.setOnClickPendingIntent(R.id.buttonWidget3,
                     getPendingSelfIntent(context, BUTTON_3))
 
-            //updateAppWidget(context, appWidgetManager, appWidgetId)
-            //context.registerReceiver(this, IntentFilter(BroadcastMessages.STATUS_UPDATED))
             appWidgetManager.updateAppWidget(appWidgetId, views)
 
         }
@@ -87,7 +84,7 @@ class ChangeStateWidget : AppWidgetProvider() {
         if (intent.action == AppWidgetManager.ACTION_APPWIDGET_UPDATE) {
             val appWidgetManager = AppWidgetManager.getInstance(context)
 
-            val thisAppWidget = ComponentName(context.packageName, ChangeStateWidget::class.java!!.name)
+            val thisAppWidget = ComponentName(context.packageName, ChangeStateWidget::class.java.name)
             val appWidgetIds = appWidgetManager.getAppWidgetIds(thisAppWidget)
             //appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.appwidget_text)
 
@@ -104,11 +101,15 @@ class ChangeStateWidget : AppWidgetProvider() {
 
             editor.putString("state", state)
 
-            editor.commit()
+            editor.apply()
+
+            val i = Intent("MainActivity")
+            i.putExtra("UPDATE", true)
+            context.applicationContext.sendBroadcast(i)
 
             val appWidgetManager = AppWidgetManager.getInstance(context)
 
-            val thisAppWidget = ComponentName(context.packageName, ChangeStateWidget::class.java!!.name)
+            val thisAppWidget = ComponentName(context.packageName, ChangeStateWidget::class.java.name)
             val appWidgetIds = appWidgetManager.getAppWidgetIds(thisAppWidget)
             //appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.appwidget_text)
 

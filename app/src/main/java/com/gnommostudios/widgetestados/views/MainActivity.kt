@@ -5,7 +5,6 @@ import android.content.*
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.*
 import com.gnommostudios.widgetestados.R
 import android.appwidget.AppWidgetManager
 import android.content.Intent
@@ -14,19 +13,28 @@ import android.content.pm.PackageManager
 import android.os.Build
 import com.gnommostudios.widgetestados.service.PermissionUtils
 import com.gnommostudios.widgetestados.service.TelephonyService
+import com.gnommostudios.widgetestados.utils.MyPhoneStates
 import com.gnommostudios.widgetestados.views.widgets.ChangeStateWidget
 import kotlinx.android.synthetic.main.activity_main.*
 
-
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    private val PERMISSIONS = arrayOf(Manifest.permission.READ_PHONE_STATE, Manifest.permission.ACCESS_COARSE_LOCATION)
-    private val PERMISSION_REQUEST = 100
+    companion object {
+        private val PERMISSIONS = arrayOf(Manifest.permission.READ_PHONE_STATE, Manifest.permission.ACCESS_COARSE_LOCATION)
+        private const val PERMISSION_REQUEST = 100
+    }
 
     private var statePreferences: SharedPreferences? = null
 
-    private var stateImage: ImageView? = null
     private var state: String? = null
+
+    private val mMessageReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            if (intent.extras!!.getBoolean("UPDATE")) {
+                changeButtons()
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,32 +42,27 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         statePreferences = getSharedPreferences("states", Context.MODE_PRIVATE)
 
-        stateImage = findViewById(R.id.state_image)
+        buttonState1.setOnClickListener(this)
+        buttonState2.setOnClickListener(this)
+        buttonState3.setOnClickListener(this)
 
-        buttonState1!!.setOnClickListener(this)
-        buttonState2!!.setOnClickListener(this)
-        buttonState3!!.setOnClickListener(this)
+        registerReceiver(mMessageReceiver, IntentFilter("MainActivity"))
 
         checkPermissions()
     }
 
-    override fun onResume() {
-        super.onResume()
-        changeButtons()
-    }
-
     override fun onClick(v: View?) {
         when (v!!.id) {
-            R.id.buttonState1 -> state = "call"
-            R.id.buttonState2 -> state = "end"
-            R.id.buttonState3 -> state = "cancel"
+            R.id.buttonState1 -> state = MyPhoneStates.TALKING
+            R.id.buttonState2 -> state = MyPhoneStates.IDLE
+            R.id.buttonState3 -> state = MyPhoneStates.BLOCK
         }
 
         val editor = statePreferences!!.edit()
 
         editor.putString("state", state)
 
-        editor.commit()
+        editor.apply()
 
         changeButtons()
     }
@@ -78,55 +81,50 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun changeButtons() {
-        state = statePreferences!!.getString("state", "end")
-
-        /*val intent = Intent(BroadcastMessages.STATUS_UPDATED)
-        //send broadcast
-        sendBroadcast(intent)*/
+        state = statePreferences!!.getString("state", MyPhoneStates.IDLE)
 
         val intent = Intent(this, ChangeStateWidget::class.java)
         intent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
-        // Use an array and EXTRA_APPWIDGET_IDS instead of AppWidgetManager.EXTRA_APPWIDGET_ID,
-        // since it seems the onUpdate() is only fired on that:
+
         val ids = AppWidgetManager.getInstance(application)
-                .getAppWidgetIds(ComponentName(application, ChangeStateWidget::class.java!!))
+                .getAppWidgetIds(ComponentName(application, ChangeStateWidget::class.java))
 
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
         sendBroadcast(intent)
 
         when (state) {
-            "call" -> {
-                stateImage!!.setImageResource(R.drawable.baseline_call_black_18dp)
+            MyPhoneStates.TALKING -> {
+                stateImage.setImageResource(R.drawable.baseline_call_black_18dp)
 
-                buttonState1!!.setImageResource(R.drawable.baseline_call_black_18dp)
-                buttonState2!!.setImageResource(R.drawable.outline_call_end_black_18dp)
-                buttonState3!!.setImageResource(R.drawable.outline_cancel_black_18dp)
+                buttonState1.setImageResource(R.drawable.baseline_call_black_18dp)
+                buttonState2.setImageResource(R.drawable.outline_call_end_black_18dp)
+                buttonState3.setImageResource(R.drawable.outline_cancel_black_18dp)
 
-                buttonState1!!.isEnabled = false
-                buttonState2!!.isEnabled = true
-                buttonState3!!.isEnabled = true
+                buttonState1.isEnabled = false
+                buttonState2.isEnabled = true
+                buttonState3.isEnabled = true
             }
-            "end" -> {
-                stateImage!!.setImageResource(R.drawable.baseline_call_end_black_18dp)
+            MyPhoneStates.IDLE -> {
+                stateImage.setImageResource(R.drawable.baseline_call_end_black_18dp)
 
-                buttonState1!!.setImageResource(R.drawable.outline_call_black_18dp)
-                buttonState2!!.setImageResource(R.drawable.baseline_call_end_black_18dp)
-                buttonState3!!.setImageResource(R.drawable.outline_cancel_black_18dp)
+                buttonState1.setImageResource(R.drawable.outline_call_black_18dp)
+                buttonState2.setImageResource(R.drawable.baseline_call_end_black_18dp)
+                buttonState3.setImageResource(R.drawable.outline_cancel_black_18dp)
 
-                buttonState1!!.isEnabled = true
-                buttonState2!!.isEnabled = false
-                buttonState3!!.isEnabled = true
+                buttonState1.isEnabled = true
+                buttonState2.isEnabled = false
+                buttonState3.isEnabled = true
             }
-            "cancel" -> {
-                stateImage!!.setImageResource(R.drawable.baseline_cancel_black_18dp)
+            MyPhoneStates.BLOCK -> {
+                stateImage.setImageResource(R.drawable.baseline_cancel_black_18dp)
 
-                buttonState1!!.setImageResource(R.drawable.outline_call_black_18dp)
-                buttonState2!!.setImageResource(R.drawable.outline_call_end_black_18dp)
-                buttonState3!!.setImageResource(R.drawable.baseline_cancel_black_18dp)
+                buttonState1.setImageResource(R.drawable.outline_call_black_18dp)
+                buttonState2.setImageResource(R.drawable.outline_call_end_black_18dp)
+                buttonState3.setImageResource(R.drawable.baseline_cancel_black_18dp)
 
-                buttonState1!!.isEnabled = true
-                buttonState2!!.isEnabled = true
-                buttonState3!!.isEnabled = false
+                buttonState1.isEnabled = true
+                buttonState2.isEnabled = true
+                buttonState3.isEnabled = false
             }
         }
     }

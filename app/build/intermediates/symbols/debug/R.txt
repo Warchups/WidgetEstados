@@ -793,7 +793,7 @@ int id src_in 0x7f07007e
 int id src_over 0x7f07007f
 int id standard 0x7f070080
 int id start 0x7f070081
-int id state_image 0x7f070082
+int id stateImage 0x7f070082
 int id submenuarrow 0x7f070083
 int id submit_area 0x7f070084
 int id tabMode 0x7f070085

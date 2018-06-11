@@ -1,4 +1,4 @@
-#Thu Jun 07 16:33:53 CEST 2018
+#Mon Jun 11 09:39:38 CEST 2018
 base.0=C\:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\4
 path.0=classes.dex
 renamed.0=classes.dex

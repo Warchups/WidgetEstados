@@ -1,17 +1,15 @@
 package com.gnommostudios.widgetestados.service
 
 import android.app.IntentService
-import android.app.Service
 import android.content.Context
 import android.content.Intent
-import android.os.IBinder
 import android.telephony.PhoneStateListener
 import android.telephony.TelephonyManager
 import android.util.Log
 
 class TelephonyService : IntentService("TelephonyService") {
 
-    var mTelephonyManager: TelephonyManager? = null
+    private var mTelephonyManager: TelephonyManager? = null
 
     override fun onCreate() {
         super.onCreate()

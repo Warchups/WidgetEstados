@@ -1,6 +1,8 @@
 package com.gnommostudios.widgetestados.service;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.telephony.CellInfo;
 import android.telephony.CellLocation;
 import android.telephony.PhoneStateListener;
@@ -9,8 +11,9 @@ import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaCellLocation;
 import android.telephony.gsm.GsmCellLocation;
 import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.gnommostudios.widgetestados.utils.MyPhoneStates;
 
 import java.util.List;
 
@@ -20,7 +23,7 @@ public class PhoneCallback extends PhoneStateListener {
     // Constants
     //--------------------------------------------------
 
-    public static final String LOG_TAG = "PhoneCallback";
+    private static final String LOG_TAG = "PhoneCallback";
 
     //--------------------------------------------------
     // Attributes
@@ -28,12 +31,15 @@ public class PhoneCallback extends PhoneStateListener {
 
     private final Context context;
 
+    private SharedPreferences statePreferences;
+
     //--------------------------------------------------
     // Constructor
     //--------------------------------------------------
 
     PhoneCallback(Context context) {
         this.context = context;
+        statePreferences = context.getSharedPreferences("states", Context.MODE_PRIVATE);
     }
 
     //--------------------------------------------------
@@ -56,17 +62,41 @@ public class PhoneCallback extends PhoneStateListener {
     }
 
     private String callStateToString(int state) {
+        Intent intent = new Intent("MainActivity");
+        intent.putExtra("UPDATE", true);
+        SharedPreferences.Editor editor = statePreferences.edit();
+
         switch (state) {
             case TelephonyManager.CALL_STATE_IDLE:
+                editor.putString("state", MyPhoneStates.IDLE);
+                editor.apply();
+
+                context.getApplicationContext().sendBroadcast(intent);
+
                 Log.i("STATE_CALL:", "IDLE");
                 return "\nonCallStateChanged: CALL_STATE_IDLE, ";
             case TelephonyManager.CALL_STATE_RINGING:
+                editor.putString("state", MyPhoneStates.TALKING);
+                editor.apply();
+
+                context.getApplicationContext().sendBroadcast(intent);
+
                 Log.i("STATE_CALL:", "RINGING");
                 return "\nonCallStateChanged: CALL_STATE_RINGING, ";
             case TelephonyManager.CALL_STATE_OFFHOOK:
+                editor.putString("state", MyPhoneStates.TALKING);
+                editor.apply();
+
+                context.getApplicationContext().sendBroadcast(intent);
+
                 Log.i("STATE_CALL:", "OFFHOOK");
                 return "\nonCallStateChanged: CALL_STATE_OFFHOOK, ";
             default:
+                editor.putString("state", MyPhoneStates.BLOCK);
+                editor.apply();
+
+                context.getApplicationContext().sendBroadcast(intent);
+
                 Log.i("STATE_CALL:", "UNKNOWN");
                 return "\nUNKNOWN_STATE: " + state + ", ";
         }
@@ -142,11 +172,11 @@ public class PhoneCallback extends PhoneStateListener {
             Log.i(LOG_TAG, message);
         } else if (location instanceof CdmaCellLocation) {
             CdmaCellLocation ccLoc = (CdmaCellLocation) location;
-            message += "onCellLocationChanged: CdmaCellLocation " + ccLoc + "\n";;
-            message += "onCellLocationChanged: CdmaCellLocation getBaseStationId " + ccLoc.getBaseStationId() + "\n";;
-            message += "onCellLocationChanged: CdmaCellLocation getBaseStationLatitude " + ccLoc.getBaseStationLatitude() + "\n";;
-            message += "onCellLocationChanged: CdmaCellLocation getBaseStationLongitude" + ccLoc.getBaseStationLongitude() + "\n";;
-            message += "onCellLocationChanged: CdmaCellLocation getNetworkId " + ccLoc.getNetworkId() + "\n";;
+            message += "onCellLocationChanged: CdmaCellLocation " + ccLoc + "\n";
+            message += "onCellLocationChanged: CdmaCellLocation getBaseStationId " + ccLoc.getBaseStationId() + "\n";
+            message += "onCellLocationChanged: CdmaCellLocation getBaseStationLatitude " + ccLoc.getBaseStationLatitude() + "\n";
+            message += "onCellLocationChanged: CdmaCellLocation getBaseStationLongitude" + ccLoc.getBaseStationLongitude() + "\n";
+            message += "onCellLocationChanged: CdmaCellLocation getNetworkId " + ccLoc.getNetworkId() + "\n";
             message += "onCellLocationChanged: CdmaCellLocation getSystemId " + ccLoc.getSystemId();
             Log.i(LOG_TAG, message);
         } else {

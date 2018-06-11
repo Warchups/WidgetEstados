@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.telephony.PhoneStateListener
 import android.telephony.TelephonyManager
-import android.util.Log
 
 class TelephonyService : IntentService("TelephonyService") {
 
@@ -24,8 +23,6 @@ class TelephonyService : IntentService("TelephonyService") {
                 or PhoneStateListener.LISTEN_SIGNAL_STRENGTHS
                 or PhoneStateListener.LISTEN_CALL_FORWARDING_INDICATOR
                 or PhoneStateListener.LISTEN_MESSAGE_WAITING_INDICATOR)
-
-        Log.i("SERVICE", "Llego aqui")
     }
 
     override fun onHandleIntent(p0: Intent?) {

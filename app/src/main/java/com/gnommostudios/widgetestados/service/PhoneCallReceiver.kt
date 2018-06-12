@@ -23,6 +23,7 @@ abstract class PhoneCallReceiver : BroadcastReceiver() {
     protected open fun onOutgoingCallEnded(context: Context, number: String?) {}
     protected open fun onMissedCall(context: Context, number: String?) {}
     protected open fun changeState(context: Context, state: String) {
+        //Mensaje de broadcas para que main actualize
         val i = Intent("MainActivity")
         i.putExtra("UPDATE", true)
         context.applicationContext.sendBroadcast(i)

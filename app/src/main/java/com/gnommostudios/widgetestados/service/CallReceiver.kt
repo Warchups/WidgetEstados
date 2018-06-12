@@ -53,6 +53,7 @@ class CallReceiver : PhoneCallReceiver() {
         editor.putString("state", state)
         editor.apply()
 
+        //Esto esta asi para que mande un mensaje de broadcast para que se actualize la vista en main despues de cambiar las preferencias
         super.changeState(context, state)
     }
 

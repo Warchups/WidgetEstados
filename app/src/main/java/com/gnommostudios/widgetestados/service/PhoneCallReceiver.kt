@@ -16,6 +16,18 @@ abstract class PhoneCallReceiver : BroadcastReceiver() {
         private var savedNumber: String? = null  //because the passed incoming is only valid in ringing
     }
 
+    //Funciones que despues le hago el override
+    protected open fun onIncomingCallStarted(context: Context, number: String?) {}
+    protected open fun onOutgoingCallStarted(context: Context, number: String?) {}
+    protected open fun onIncomingCallEnded(context: Context, number: String?) {}
+    protected open fun onOutgoingCallEnded(context: Context, number: String?) {}
+    protected open fun onMissedCall(context: Context, number: String?) {}
+    protected open fun changeState(context: Context, state: String) {
+        val i = Intent("MainActivity")
+        i.putExtra("UPDATE", true)
+        context.applicationContext.sendBroadcast(i)
+    }
+
     override fun onReceive(context: Context, intent: Intent) {
         //We listen to two intents.  The new outgoing call only tells us of an outgoing call.  We use it to get the number.
         if (intent.action == "android.intent.action.NEW_OUTGOING_CALL") {
@@ -34,18 +46,6 @@ abstract class PhoneCallReceiver : BroadcastReceiver() {
         }
     }
 
-    protected open fun onIncomingCallStarted(context: Context, number: String?) {}
-    protected open fun onOutgoingCallStarted(context: Context, number: String?) {}
-    protected open fun onIncomingCallEnded(context: Context, number: String?) {}
-    protected open fun onOutgoingCallEnded(context: Context, number: String?) {}
-    protected open fun onMissedCall(context: Context, number: String?) {}
-
-    protected open fun changeState(context: Context, state: String) {
-        val i = Intent("MainActivity")
-        i.putExtra("UPDATE", true)
-        context.applicationContext.sendBroadcast(i)
-    }
-
     //Deals with actual events
 
     //Incoming call-  goes from IDLE to RINGING when it rings, to OFFHOOK when it's answered, to IDLE when its hung up
@@ -60,7 +60,7 @@ abstract class PhoneCallReceiver : BroadcastReceiver() {
             TelephonyManager.CALL_STATE_RINGING -> {
                 isIncoming = true
                 savedNumber = number
-                onIncomingCallStarted(context, number)
+                onIncomingCallStarted(context, savedNumber)
             }
 
             TelephonyManager.CALL_STATE_OFFHOOK -> {

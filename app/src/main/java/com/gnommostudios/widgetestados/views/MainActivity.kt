@@ -99,6 +99,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 buttonIdle.isEnabled = true
                 buttonLocked.isEnabled = true
             }
+
             MyPhoneStates.IDLE -> {
                 stateImage.setImageResource(R.drawable.baseline_call_end_24)
 
@@ -110,6 +111,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 buttonIdle.isEnabled = false
                 buttonLocked.isEnabled = true
             }
+
             MyPhoneStates.LOCKED -> {
                 stateImage.setImageResource(R.drawable.baseline_cancel_24)
 

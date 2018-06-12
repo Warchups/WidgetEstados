@@ -3,7 +3,7 @@
     package="com.gnommostudios.widgetestados">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
 
     <application
         android:allowBackup="true"
@@ -30,9 +30,14 @@
                 android:resource="@xml/change_state_widget_info" />
         </receiver>
 
-        <service
-            android:name=".service.TelephonyService"
-            android:exported="false"></service>
+        <receiver android:name=".service.CallReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
 
     </application>
 

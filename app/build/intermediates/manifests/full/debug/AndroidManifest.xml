@@ -9,7 +9,7 @@
         android:targetSdkVersion="26" />
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
 
     <application
         android:allowBackup="true"
@@ -37,10 +37,14 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/change_state_widget_info" />
         </receiver>
-
-        <service
-            android:name="com.gnommostudios.widgetestados.service.TelephonyService"
-            android:exported="false" />
+        <receiver android:name="com.gnommostudios.widgetestados.service.CallReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

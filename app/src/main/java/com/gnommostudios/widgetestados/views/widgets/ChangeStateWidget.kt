@@ -31,24 +31,24 @@ class ChangeStateWidget : AppWidgetProvider() {
 
             when (state) {
                 MyPhoneStates.TALKING -> {
-                    views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.baseline_call_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.outline_call_end_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.outline_cancel_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.baseline_call_24)
+                    views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.outline_call_end_24)
+                    views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.outline_cancel_24)
                 }
                 MyPhoneStates.IDLE -> {
-                    views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.outline_call_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.baseline_call_end_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.outline_cancel_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.outline_call_24)
+                    views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.baseline_call_end_24)
+                    views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.outline_cancel_24)
                 }
                 MyPhoneStates.LOCKED -> {
-                    views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.outline_call_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.outline_call_end_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.baseline_cancel_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.outline_call_24)
+                    views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.outline_call_end_24)
+                    views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.baseline_cancel_24)
                 }
                 else -> {
-                    views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.outline_call_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.outline_call_end_black_18dp)
-                    views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.outline_cancel_black_18dp)
+                    views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.outline_call_24)
+                    views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.outline_call_end_24)
+                    views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.outline_cancel_24)
                 }
             }
 

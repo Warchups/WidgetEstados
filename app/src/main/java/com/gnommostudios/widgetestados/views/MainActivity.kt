@@ -1,6 +1,5 @@
 package com.gnommostudios.widgetestados.views
 
-import android.Manifest
 import android.content.*
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -9,24 +8,19 @@ import com.gnommostudios.widgetestados.R
 import android.appwidget.AppWidgetManager
 import android.content.Intent
 import android.content.ComponentName
-import android.content.pm.PackageManager
-import android.os.Build
-import com.gnommostudios.widgetestados.service.PermissionUtils
-import com.gnommostudios.widgetestados.service.TelephonyService
 import com.gnommostudios.widgetestados.utils.MyPhoneStates
 import com.gnommostudios.widgetestados.views.widgets.ChangeStateWidget
 import kotlinx.android.synthetic.main.activity_main.*
+import android.content.SharedPreferences
+import android.telephony.TelephonyManager
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-
-    companion object {
-        private val PERMISSIONS = arrayOf(Manifest.permission.READ_PHONE_STATE, Manifest.permission.ACCESS_COARSE_LOCATION)
-        private const val PERMISSION_REQUEST = 100
-    }
 
     private var statePreferences: SharedPreferences? = null
 
     private var state: String? = null
+
+    private var telephonyManager: TelephonyManager? = null
 
     private val mMessageReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -46,12 +40,23 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         buttonIdle.setOnClickListener(this)
         buttonLocked.setOnClickListener(this)
 
-        registerReceiver(mMessageReceiver, IntentFilter("MainActivity"))
-    }
+        telephonyManager = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
 
-    override fun onResume() {
-        super.onResume()
-        checkPermissions()
+        state = statePreferences!!.getString("state", MyPhoneStates.IDLE)
+
+        if (telephonyManager!!.callState == TelephonyManager.CALL_STATE_IDLE && state!! != MyPhoneStates.LOCKED) {
+            state = MyPhoneStates.IDLE
+
+            val editor = statePreferences!!.edit()
+
+            editor.putString("state", state)
+
+            editor.apply()
+        }
+
+        registerReceiver(mMessageReceiver, IntentFilter("MainActivity"))
+
+        changeButtons()
     }
 
     override fun onClick(v: View?) {
@@ -70,19 +75,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         changeButtons()
     }
 
-    //--------------------------------------------------
-    // Permissions
-    //--------------------------------------------------
-
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
-        when (requestCode) {
-            PERMISSION_REQUEST -> {
-                isPermissionGranted(grantResults)
-                return
-            }
-        }
-    }
-
     private fun changeButtons() {
         state = statePreferences!!.getString("state", MyPhoneStates.IDLE)
 
@@ -97,33 +89,33 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         when (state) {
             MyPhoneStates.TALKING -> {
-                stateImage.setImageResource(R.drawable.baseline_call_black_18dp)
+                stateImage.setImageResource(R.drawable.baseline_call_24)
 
-                buttonTalking.setImageResource(R.drawable.baseline_call_black_18dp)
-                buttonIdle.setImageResource(R.drawable.outline_call_end_black_18dp)
-                buttonLocked.setImageResource(R.drawable.outline_cancel_black_18dp)
+                buttonTalking.setImageResource(R.drawable.baseline_call_24)
+                buttonIdle.setImageResource(R.drawable.outline_call_end_24)
+                buttonLocked.setImageResource(R.drawable.outline_cancel_24)
 
                 buttonTalking.isEnabled = false
                 buttonIdle.isEnabled = true
                 buttonLocked.isEnabled = true
             }
             MyPhoneStates.IDLE -> {
-                stateImage.setImageResource(R.drawable.baseline_call_end_black_18dp)
+                stateImage.setImageResource(R.drawable.baseline_call_end_24)
 
-                buttonTalking.setImageResource(R.drawable.outline_call_black_18dp)
-                buttonIdle.setImageResource(R.drawable.baseline_call_end_black_18dp)
-                buttonLocked.setImageResource(R.drawable.outline_cancel_black_18dp)
+                buttonTalking.setImageResource(R.drawable.outline_call_24)
+                buttonIdle.setImageResource(R.drawable.baseline_call_end_24)
+                buttonLocked.setImageResource(R.drawable.outline_cancel_24)
 
                 buttonTalking.isEnabled = true
                 buttonIdle.isEnabled = false
                 buttonLocked.isEnabled = true
             }
             MyPhoneStates.LOCKED -> {
-                stateImage.setImageResource(R.drawable.baseline_cancel_black_18dp)
+                stateImage.setImageResource(R.drawable.baseline_cancel_24)
 
-                buttonTalking.setImageResource(R.drawable.outline_call_black_18dp)
-                buttonIdle.setImageResource(R.drawable.outline_call_end_black_18dp)
-                buttonLocked.setImageResource(R.drawable.baseline_cancel_black_18dp)
+                buttonTalking.setImageResource(R.drawable.outline_call_24)
+                buttonIdle.setImageResource(R.drawable.outline_call_end_24)
+                buttonLocked.setImageResource(R.drawable.baseline_cancel_24)
 
                 buttonTalking.isEnabled = true
                 buttonIdle.isEnabled = true
@@ -132,37 +124,4 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun checkPermissions() {
-        // Checks the Android version of the device.
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            val canWriteExternalStorage = PermissionUtils.canReadPhoneState(this)
-            val canReadExternalStorage = PermissionUtils.canAccessCoarseLocation(this)
-            if (!canWriteExternalStorage || !canReadExternalStorage) {
-                requestPermissions(PERMISSIONS, PERMISSION_REQUEST)
-            } else {
-                // Permission was granted.
-                callPhoneManager()
-            }
-        } else {
-            // Version is below Marshmallow.
-            callPhoneManager()
-        }
-    }
-
-    private fun callPhoneManager() {
-        val serviceIntent = Intent(this, TelephonyService::class.java)
-        //serviceIntent.action = "com.gnommostudios.widgetestados.service.TelephonyService"
-        startService(serviceIntent)
-    }
-
-    private fun isPermissionGranted(grantResults: IntArray) {
-        if (grantResults.isNotEmpty()) {
-            val permissionGranted = grantResults[0] == PackageManager.PERMISSION_GRANTED
-            if (permissionGranted) {
-                callPhoneManager()
-            } else {
-                PermissionUtils.alertAndFinish(this)
-            }
-        }
-    }
 }

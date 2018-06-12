@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
@@ -17,7 +18,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:contentDescription="@string/talking"
-            android:src="@drawable/outline_call_black_18dp"
+            app:srcCompat="@drawable/outline_call_24"
             android:tint="@android:color/white" />
 
         <ImageButton
@@ -27,7 +28,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:contentDescription="@string/idle"
-            android:src="@drawable/outline_call_end_black_18dp"
+            app:srcCompat="@drawable/outline_call_end_24"
             android:tint="@android:color/white" />
 
         <ImageButton
@@ -37,7 +38,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:contentDescription="@string/locked"
-            android:src="@drawable/outline_cancel_black_18dp"
+            app:srcCompat="@drawable/outline_cancel_24"
             android:tint="@android:color/white" />
 
     </LinearLayout>

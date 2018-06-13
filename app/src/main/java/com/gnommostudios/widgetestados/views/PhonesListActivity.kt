@@ -47,6 +47,7 @@ class PhonesListActivity : AppCompatActivity(), AdapterView.OnItemClickListener 
     override fun onItemClick(adapterView: AdapterView<*>?, view: View?, pos: Int, p3: Long) {
         position = pos
 
+        //Compruebo los permisos de llamada
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
                 != PackageManager.PERMISSION_GRANTED) {
 
@@ -61,6 +62,7 @@ class PhonesListActivity : AppCompatActivity(), AdapterView.OnItemClickListener 
 
     @SuppressLint("MissingPermission")
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+        //Si los habilito inicio la llamada, si no, no hago nada
         when (requestCode) {
             MY_PERMISSIONS_REQUEST_CALL_PHONE -> {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {

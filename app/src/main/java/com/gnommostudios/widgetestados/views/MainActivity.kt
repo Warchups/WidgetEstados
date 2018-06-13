@@ -13,6 +13,8 @@ import com.gnommostudios.widgetestados.views.widgets.ChangeStateWidget
 import kotlinx.android.synthetic.main.activity_main.*
 import android.content.SharedPreferences
 import android.telephony.TelephonyManager
+import com.gnommostudios.widgetestados.views.widgets.ListTestWidget
+import java.util.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -21,6 +23,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private var state: String? = null
 
     private var telephonyManager: TelephonyManager? = null
+
+    private val mapPhones = HashMap<String, String>()
+    private val randomNames = arrayListOf("Jorge", "Quique", "Borja", "Xito", "Manu", "Cristian", "Alberto", "Mario", "Raul")
 
     private val mMessageReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -40,6 +45,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         buttonIdle.setOnClickListener(this)
         buttonLocked.setOnClickListener(this)
 
+        addPhone.setOnClickListener({
+            createRandomPhone()
+        })
+
+        viewListButton.setOnClickListener({
+            val intent = Intent(this, PhonesListActivity::class.java)
+
+            startActivity(intent)
+        })
+
         telephonyManager = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
 
         state = statePreferences!!.getString("state", MyPhoneStates.IDLE)
@@ -56,7 +71,49 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         registerReceiver(mMessageReceiver, IntentFilter("MainActivity"))
 
+        mapPhones["Christian"] = "610938758"
+        mapPhones["GnommoOfi"] = "962064094"
+
+        updatePhonesList()
+
         changeButtons()
+    }
+
+    private fun createRandomPhone() {
+        var number = "6"
+
+        val r = Random()
+        for (i in 0..7) {
+            number += r.nextInt(9)
+        }
+
+        val name = randomNames[r.nextInt(randomNames.size)]
+
+        //Log.i(name, number)
+
+        mapPhones[name] = number
+
+        updatePhonesList()
+    }
+
+    private fun updatePhonesList() {
+        val listPhonesPrefs = getSharedPreferences("phones", Context.MODE_PRIVATE)
+        val listPhonesPrefsEditor = listPhonesPrefs.edit()
+
+        for (s in mapPhones.keys) {
+            listPhonesPrefsEditor.putString("phone_$s", mapPhones[s])
+        }
+
+        listPhonesPrefsEditor.apply()
+
+        val intent = Intent(this, ListTestWidget::class.java)
+        intent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
+
+        val ids = AppWidgetManager.getInstance(application)
+                .getAppWidgetIds(ComponentName(application, ListTestWidget::class.java))
+
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+        sendBroadcast(intent)
     }
 
     override fun onClick(v: View?) {

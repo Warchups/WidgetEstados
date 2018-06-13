@@ -9,4 +9,6 @@
     <string name="talking">Talking</string>
     <string name="idle">Idle</string>
     <string name="locked">Locked</string>
+    <string name="add_phone">Add Random Phone</string>
+    <string name="viewList">View Phones List</string>
 </resources>

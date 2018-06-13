@@ -3,7 +3,8 @@
     package="com.gnommostudios.widgetestados">
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:allowBackup="true"
@@ -29,8 +30,21 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/change_state_widget_info" />
         </receiver>
+        <receiver android:name=".views.widgets.ListTestWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
 
-        <receiver android:name=".service.CallReceiver" >
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/list_test_widget_info" />
+        </receiver>
+
+        <service
+            android:name=".views.widgets.WidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <receiver android:name=".service.CallReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PHONE_STATE" />
             </intent-filter>
@@ -39,6 +53,7 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name=".views.PhonesListActivity"></activity>
     </application>
 
 </manifest>

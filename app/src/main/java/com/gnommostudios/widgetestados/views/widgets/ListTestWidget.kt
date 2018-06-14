@@ -2,6 +2,7 @@ package com.gnommostudios.widgetestados.views.widgets
 
 import android.annotation.SuppressLint
 import android.annotation.TargetApi
+import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.ComponentName
@@ -55,8 +56,14 @@ class ListTestWidget : AppWidgetProvider() {
             setRemoteAdapterV11(context, views)
         }
 
+        views.setPendingIntentTemplate(R.id.widget_list, getStringPendingIntent(context))
+
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views)
+    }
+
+    private fun getStringPendingIntent(context: Context): PendingIntent {
+        return PendingIntent.getActivity(context, 0, Intent(Intent.ACTION_VIEW), 0)
     }
 
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)

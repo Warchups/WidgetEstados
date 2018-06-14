@@ -1,8 +1,12 @@
 package com.gnommostudios.widgetestados.views.widgets
 
-import android.content.*
+import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
+import android.net.Uri
 import android.widget.RemoteViews
 import android.widget.RemoteViewsService
+import com.gnommostudios.widgetestados.R
 
 import java.util.ArrayList
 
@@ -36,9 +40,13 @@ class WidgetDataProvider(context: Context, intent: Intent) : RemoteViewsService.
     }
 
     override fun getViewAt(position: Int): RemoteViews {
+        val phone = mCollection[position]
         val view = RemoteViews(mContext!!.packageName,
-                android.R.layout.simple_list_item_1)
-        view.setTextViewText(android.R.id.text1, mCollection[position])
+                R.layout.element_list)
+        view.setTextViewText(R.id.phoneTxt, mCollection[position])
+
+        setOnClickFillInIntent(view, phone)
+
         return view
     }
 
@@ -69,8 +77,14 @@ class WidgetDataProvider(context: Context, intent: Intent) : RemoteViewsService.
 
     }
 
+    private fun setOnClickFillInIntent(views: RemoteViews, phone: String) {
+        val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:${phone.split(" - ")[1]}"))
+        views.setOnClickFillInIntent(R.id.element_list, intent)
+    }
+
     companion object {
 
+        private val MY_PERMISSIONS_REQUEST_CALL_PHONE = 0x2
         private val TAG = "WidgetDataProvider"
     }
 

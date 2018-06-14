@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/buttonWidgetUnchecked"
+        android:background="@android:color/transparent"
         android:orientation="horizontal">
 
         <ImageButton
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
+            android:background="@drawable/card"
             android:contentDescription="@string/talking"
             app:srcCompat="@drawable/outline_call_24"
             android:tint="@android:color/white" />
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
+            android:background="@drawable/card"
             android:contentDescription="@string/idle"
             app:srcCompat="@drawable/outline_call_end_24"
             android:tint="@android:color/white" />
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/transparent"
+            android:background="@drawable/card"
             android:contentDescription="@string/locked"
             app:srcCompat="@drawable/outline_cancel_24"
             android:tint="@android:color/white" />

@@ -1516,6 +1516,10 @@
         "source": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\src\\main\\res\\drawable-xxxhdpi\\outline_call_end_black_24.png"
     },
     {
+        "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable_card_selected.xml.flat",
+        "source": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\src\\main\\res\\drawable\\card_selected.xml"
+    },
+    {
         "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\8e23feb81ec80a5e7b5965870e7f7df4\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
     },
@@ -1690,6 +1694,10 @@
     {
         "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_baseline_call_end_black_24.png.flat",
         "source": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\src\\main\\res\\drawable-mdpi\\baseline_call_end_black_24.png"
+    },
+    {
+        "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable_card.xml.flat",
+        "source": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\src\\main\\res\\drawable\\card.xml"
     },
     {
         "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",

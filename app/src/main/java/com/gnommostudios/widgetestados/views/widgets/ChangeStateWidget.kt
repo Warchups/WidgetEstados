@@ -7,6 +7,7 @@ import android.content.*
 import android.widget.RemoteViews
 import com.gnommostudios.widgetestados.R
 import com.gnommostudios.widgetestados.utils.MyPhoneStates
+import com.gnommostudios.widgetestados.utils.RemoteViewsUtil.setBackground
 
 class ChangeStateWidget : AppWidgetProvider() {
 
@@ -32,23 +33,46 @@ class ChangeStateWidget : AppWidgetProvider() {
             when (state) {
                 MyPhoneStates.TALKING -> {
                     views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.baseline_call_24)
+                    setBackground(views, R.id.buttonWidgetTalking, R.drawable.card_selected)
+
                     views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.outline_call_end_24)
+                    setBackground(views, R.id.buttonWidgetIdle, R.drawable.card)
+
                     views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.outline_cancel_24)
+                    setBackground(views, R.id.buttonWidgetLocked, R.drawable.card)
                 }
                 MyPhoneStates.IDLE -> {
                     views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.outline_call_24)
+                    setBackground(views, R.id.buttonWidgetTalking, R.drawable.card)
+
                     views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.baseline_call_end_24)
+                    setBackground(views, R.id.buttonWidgetIdle, R.drawable.card_selected)
+
                     views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.outline_cancel_24)
+                    setBackground(views, R.id.buttonWidgetLocked, R.drawable.card)
+
                 }
                 MyPhoneStates.LOCKED -> {
                     views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.outline_call_24)
+                    setBackground(views, R.id.buttonWidgetTalking, R.drawable.card)
+
                     views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.outline_call_end_24)
+                    setBackground(views, R.id.buttonWidgetIdle, R.drawable.card)
+
                     views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.baseline_cancel_24)
+                    setBackground(views, R.id.buttonWidgetLocked, R.drawable.card_selected)
+
                 }
                 else -> {
                     views.setImageViewResource(R.id.buttonWidgetTalking, R.drawable.outline_call_24)
+                    setBackground(views, R.id.buttonWidgetTalking, R.drawable.card)
+
                     views.setImageViewResource(R.id.buttonWidgetIdle, R.drawable.outline_call_end_24)
+                    setBackground(views, R.id.buttonWidgetIdle, R.drawable.card)
+
                     views.setImageViewResource(R.id.buttonWidgetLocked, R.drawable.outline_cancel_24)
+                    setBackground(views, R.id.buttonWidgetLocked, R.drawable.card)
+
                 }
             }
 

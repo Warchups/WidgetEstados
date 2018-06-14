@@ -4,7 +4,7 @@
     android:initialLayout="@layout/list_test_widget"
     android:minHeight="110dp"
     android:minWidth="180dp"
-    android:previewImage="@drawable/example_appwidget_preview"
+    android:previewImage="@drawable/list_appwidget_preview"
     android:updatePeriodMillis="0"
     android:resizeMode="vertical"
     android:widgetCategory="home_screen"/>

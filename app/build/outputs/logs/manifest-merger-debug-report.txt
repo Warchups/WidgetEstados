@@ -57,7 +57,7 @@ MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Jo
 	android:roundIcon
 		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:13:9-54
 	android:icon
-		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:11:9-50
 	android:allowBackup
 		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme

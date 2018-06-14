@@ -132,10 +132,6 @@
         "source": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\src\\main\\res\\layout\\change_state_widget.xml"
     },
     {
-        "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi_example_appwidget_preview.png.flat",
-        "source": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\src\\main\\res\\drawable-nodpi\\example_appwidget_preview.png"
-    },
-    {
         "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\drawable-ldrtl-xhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
@@ -956,6 +952,10 @@
         "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi_buttons_appwidget_preview.png.flat",
+        "source": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\src\\main\\res\\drawable-nodpi\\buttons_appwidget_preview.png"
+    },
+    {
         "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_baseline_call_black_48.png.flat",
         "source": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\src\\main\\res\\drawable-xxhdpi\\baseline_call_black_48.png"
     },
@@ -1536,6 +1536,10 @@
         "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\layout\\abc_screen_simple.xml"
     },
     {
+        "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable_if_phone_1287515.png.flat",
+        "source": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\src\\main\\res\\drawable\\if_phone_1287515.png"
+    },
+    {
         "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_outline_cancel_black_36.png.flat",
         "source": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\src\\main\\res\\drawable-hdpi\\outline_cancel_black_36.png"
     },
@@ -1638,6 +1642,10 @@
     {
         "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_baseline_call_black_36.png.flat",
         "source": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\src\\main\\res\\drawable-xxxhdpi\\baseline_call_black_36.png"
+    },
+    {
+        "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-nodpi_list_appwidget_preview.png.flat",
+        "source": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\src\\main\\res\\drawable-nodpi\\list_appwidget_preview.png"
     },
     {
         "merged": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_outline_call_end_black_36.png.flat",

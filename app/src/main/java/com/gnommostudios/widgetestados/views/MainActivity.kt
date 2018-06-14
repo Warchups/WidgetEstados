@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private var telephonyManager: TelephonyManager? = null
 
     private val mapPhones = HashMap<String, String>()
-    private val randomNames = arrayListOf("Jorge", "Quique", "Borja", "Xito", "Manu", "Cristian", "Alberto", "Mario", "Raul")
+    private val randomNames = arrayListOf("Jorge", "Quique", "Borja", "Xito", "Manu", "Cristian", "Alberto", "Mario", "Raul", "Christian", "Ofi")
 
     private val mMessageReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -71,9 +71,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         registerReceiver(mMessageReceiver, IntentFilter("MainActivity"))
-
-        mapPhones["Christian"] = "610938758"
-        mapPhones["GnommoOfi"] = "962064094"
 
         updatePhonesList()
 

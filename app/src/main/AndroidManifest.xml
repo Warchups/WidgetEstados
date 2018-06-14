@@ -53,7 +53,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".views.PhonesListActivity"></activity>
+        <activity android:name=".views.PhonesListActivity"/>
     </application>
 
 </manifest>

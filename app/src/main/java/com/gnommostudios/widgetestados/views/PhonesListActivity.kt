@@ -19,7 +19,9 @@ import android.support.v4.content.ContextCompat
 
 class PhonesListActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
 
-    private val MY_PERMISSIONS_REQUEST_CALL_PHONE = 0x2
+    companion object {
+        private const val MY_PERMISSIONS_REQUEST_CALL_PHONE = 0x2
+    }
 
     private var listPhonesPrefs: SharedPreferences? = null
     private var map: Map<String, String>? = null
@@ -78,6 +80,7 @@ class PhonesListActivity : AppCompatActivity(), AdapterView.OnItemClickListener 
     }
 
     private fun refreshList() {
+        phonesList.clear()
         map = listPhonesPrefs!!.all as Map<String, String>
 
         for (i in map!!.keys)

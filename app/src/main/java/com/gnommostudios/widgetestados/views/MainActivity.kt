@@ -45,15 +45,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         buttonIdle.setOnClickListener(this)
         buttonLocked.setOnClickListener(this)
 
-        addPhone.setOnClickListener({
+        addPhone.setOnClickListener {
             createRandomPhone()
-        })
+        }
 
-        viewListButton.setOnClickListener({
+        viewListButton.setOnClickListener{
             val intent = Intent(this, PhonesListActivity::class.java)
 
             startActivity(intent)
-        })
+        }
 
         telephonyManager = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
 

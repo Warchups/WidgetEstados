@@ -69,7 +69,7 @@ class WidgetDataProvider(context: Context, intent: Intent) : RemoteViewsService.
     private fun initData() {
         mCollection.clear()
 
-        val map = listPhonesPrefs!!.all as Map<String, String>
+        val map = listPhonesPrefs!!.all as Map<String, *>
 
         for (i in map.keys)
             mCollection.add("${i.split("_")[1]} - ${map[i]!!}")
@@ -80,12 +80,6 @@ class WidgetDataProvider(context: Context, intent: Intent) : RemoteViewsService.
     private fun setOnClickFillInIntent(views: RemoteViews, phone: String) {
         val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:${phone.split(" - ")[1]}"))
         views.setOnClickFillInIntent(R.id.element_list, intent)
-    }
-
-    companion object {
-
-        private val MY_PERMISSIONS_REQUEST_CALL_PHONE = 0x2
-        private val TAG = "WidgetDataProvider"
     }
 
 }

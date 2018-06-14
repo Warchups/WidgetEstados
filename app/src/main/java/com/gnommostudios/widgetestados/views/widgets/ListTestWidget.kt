@@ -72,6 +72,7 @@ class ListTestWidget : AppWidgetProvider() {
                 Intent(context, WidgetService::class.java))
     }
 
+    @Suppress("DEPRECATION")
     private fun setRemoteAdapterV11(context: Context, views: RemoteViews) {
         views.setRemoteAdapter(0, R.id.widget_list,
                 Intent(context, WidgetService::class.java))

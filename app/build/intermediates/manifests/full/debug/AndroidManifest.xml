@@ -38,7 +38,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/change_state_widget_info" />
         </receiver>
-        <receiver android:name="com.gnommostudios.widgetestados.views.widgets.ListTestWidget" >
+        <receiver android:name="com.gnommostudios.widgetestados.views.widgets.ListWidget" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -49,7 +49,7 @@
         </receiver>
 
         <service
-            android:name="com.gnommostudios.widgetestados.views.widgets.WidgetService"
+            android:name="com.gnommostudios.widgetestados.views.widgets.ListWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <receiver android:name="com.gnommostudios.widgetestados.service.CallReceiver" >

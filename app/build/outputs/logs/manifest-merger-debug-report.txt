@@ -92,16 +92,16 @@ ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEst
 		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:31:17-65
 	android:name
 		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:30:17-58
-receiver#com.gnommostudios.widgetestados.views.widgets.ListTestWidget
+receiver#com.gnommostudios.widgetestados.views.widgets.ListWidget
 ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:33:9-41:20
 	android:name
-		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:33:19-63
-service#com.gnommostudios.widgetestados.views.widgets.WidgetService
+		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:33:19-59
+service#com.gnommostudios.widgetestados.views.widgets.ListWidgetService
 ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:43:9-45:72
 	android:permission
 		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:45:13-69
 	android:name
-		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:44:13-56
+		ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:44:13-60
 receiver#com.gnommostudios.widgetestados.service.CallReceiver
 ADDED from C:\Users\Jorge-Practicas\Desktop\Gnommo_Practicas_Christian\WidgetEstados\app\src\main\AndroidManifest.xml:47:9-54:20
 	android:name

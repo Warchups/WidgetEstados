@@ -13,14 +13,14 @@ import android.widget.RemoteViews
 
 import com.gnommostudios.widgetestados.R
 
-class ListTestWidget : AppWidgetProvider() {
+class ListWidget : AppWidgetProvider() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
         super.onReceive(context, intent)
         if (intent!!.action == AppWidgetManager.ACTION_APPWIDGET_UPDATE) {
             val appWidgetManager = AppWidgetManager.getInstance(context)
 
-            val thisAppWidget = ComponentName(context!!.packageName, ListTestWidget::class.java.name)
+            val thisAppWidget = ComponentName(context!!.packageName, ListWidget::class.java.name)
             val appWidgetIds = appWidgetManager.getAppWidgetIds(thisAppWidget)
 
             appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.widget_list)
@@ -46,7 +46,7 @@ class ListTestWidget : AppWidgetProvider() {
     @SuppressLint("ObsoleteSdkInt")
     private fun updateAppWidget(context: Context, appWidgetManager: AppWidgetManager,
                                 appWidgetId: Int) {
-        val views = RemoteViews(context.packageName, R.layout.list_test_widget)
+        val views = RemoteViews(context.packageName, R.layout.list_widget)
         //        views.setTextViewText(R.id.appwidget_text, widgetText);
 
         // Set up the collection
@@ -69,13 +69,13 @@ class ListTestWidget : AppWidgetProvider() {
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     private fun setRemoteAdapter(context: Context, views: RemoteViews) {
         views.setRemoteAdapter(R.id.widget_list,
-                Intent(context, WidgetService::class.java))
+                Intent(context, ListWidgetService::class.java))
     }
 
     @Suppress("DEPRECATION")
     private fun setRemoteAdapterV11(context: Context, views: RemoteViews) {
         views.setRemoteAdapter(0, R.id.widget_list,
-                Intent(context, WidgetService::class.java))
+                Intent(context, ListWidgetService::class.java))
     }
 
 }

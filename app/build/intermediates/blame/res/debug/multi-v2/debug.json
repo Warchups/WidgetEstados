@@ -164,38 +164,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-mk_values-mk.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-mk\\values-mk.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,213,317,425,511,616,735,818,900,987,1093,1200,1301,1408,1519,1623,1779,1877",
-                        "endColumns": "107,103,107,85,104,118,82,81,86,105,106,100,106,110,103,155,97,83",
-                        "endOffsets": "208,312,420,506,611,730,813,895,982,1088,1195,1296,1403,1514,1618,1774,1872,1956"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\8e23feb81ec80a5e7b5965870e7f7df4\\res\\values-mk\\values-mk.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1961",
-                        "endColumns": "100",
-                        "endOffsets": "2057"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-ko_values-ko.arsc.flat",
             "map": [
                 {
@@ -223,6 +191,38 @@
                         "startOffsets": "1824",
                         "endColumns": "100",
                         "endOffsets": "1920"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-mk_values-mk.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-mk\\values-mk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,213,317,425,511,616,735,818,900,987,1093,1200,1301,1408,1519,1623,1779,1877",
+                        "endColumns": "107,103,107,85,104,118,82,81,86,105,106,100,106,110,103,155,97,83",
+                        "endOffsets": "208,312,420,506,611,730,813,895,982,1088,1195,1296,1403,1514,1618,1774,1872,1956"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\8e23feb81ec80a5e7b5965870e7f7df4\\res\\values-mk\\values-mk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1961",
+                        "endColumns": "100",
+                        "endOffsets": "2057"
                     }
                 }
             ]
@@ -448,16 +448,33 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-night-v8_values-night-v8.arsc.flat",
+            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-pt-rPT_values-pt-rPT.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-pt-rPT\\values-pt-rPT.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,125,209,293,389,491,593",
-                        "endColumns": "69,83,83,95,101,101,93",
-                        "endOffsets": "120,204,288,384,486,588,682"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,225,331,438,527,628,752,836,917,1004,1111,1223,1325,1433,1540,1647,1818,1917",
+                        "endColumns": "119,105,106,88,100,123,83,80,86,106,111,101,107,106,106,170,98,84",
+                        "endOffsets": "220,326,433,522,623,747,831,912,999,1106,1218,1320,1428,1535,1642,1813,1912,1997"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\8e23feb81ec80a5e7b5965870e7f7df4\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2002",
+                        "endColumns": "100",
+                        "endOffsets": "2098"
                     }
                 }
             ]
@@ -495,33 +512,16 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-pt-rPT_values-pt-rPT.arsc.flat",
+            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-pt-rPT\\values-pt-rPT.xml",
+                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,225,331,438,527,628,752,836,917,1004,1111,1223,1325,1433,1540,1647,1818,1917",
-                        "endColumns": "119,105,106,88,100,123,83,80,86,106,111,101,107,106,106,170,98,84",
-                        "endOffsets": "220,326,433,522,623,747,831,912,999,1106,1218,1320,1428,1535,1642,1813,1912,1997"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\8e23feb81ec80a5e7b5965870e7f7df4\\res\\values-pt-rPT\\values-pt-rPT.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "2002",
-                        "endColumns": "100",
-                        "endOffsets": "2098"
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,125,209,293,389,491,593",
+                        "endColumns": "69,83,83,95,101,101,93",
+                        "endOffsets": "120,204,288,384,486,588,682"
                     }
                 }
             ]
@@ -591,38 +591,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-hi_values-hi.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-hi\\values-hi.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,211,308,418,504,606,728,805,883,973,1082,1185,1287,1397,1498,1613,1775,1876",
-                        "endColumns": "105,96,109,85,101,121,76,77,89,108,102,101,109,100,114,161,100,79",
-                        "endOffsets": "206,303,413,499,601,723,800,878,968,1077,1180,1282,1392,1493,1608,1770,1871,1951"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\8e23feb81ec80a5e7b5965870e7f7df4\\res\\values-hi\\values-hi.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1956",
-                        "endColumns": "100",
-                        "endOffsets": "2052"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-pt_values-pt.arsc.flat",
             "map": [
                 {
@@ -650,6 +618,38 @@
                         "startOffsets": "1989",
                         "endColumns": "100",
                         "endOffsets": "2085"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-hi_values-hi.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-hi\\values-hi.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,211,308,418,504,606,728,805,883,973,1082,1185,1287,1397,1498,1613,1775,1876",
+                        "endColumns": "105,96,109,85,101,121,76,77,89,108,102,101,109,100,114,161,100,79",
+                        "endOffsets": "206,303,413,499,601,723,800,878,968,1077,1180,1282,1392,1493,1608,1770,1871,1951"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\8e23feb81ec80a5e7b5965870e7f7df4\\res\\values-hi\\values-hi.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1956",
+                        "endColumns": "100",
+                        "endOffsets": "2052"
                     }
                 }
             ]
@@ -1197,33 +1197,33 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-watch-v20_values-watch-v20.arsc.flat",
+            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-cs_values-cs.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-cs\\values-cs.xml",
                     "from": {
-                        "startLines": "2,5,8",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,214,385",
-                        "endLines": "4,7,10",
-                        "endColumns": "12,12,12",
-                        "endOffsets": "209,380,553"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,212,314,423,509,614,731,812,893,977,1081,1190,1289,1395,1505,1612,1775,1873",
+                        "endColumns": "106,101,108,85,104,116,80,80,83,103,108,98,105,109,106,162,97,81",
+                        "endOffsets": "207,309,418,504,609,726,807,888,972,1076,1185,1284,1390,1500,1607,1770,1868,1950"
                     }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-v17_values-v17.arsc.flat",
-            "map": [
+                },
                 {
-                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-v17\\values-v17.xml",
+                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\8e23feb81ec80a5e7b5965870e7f7df4\\res\\values-cs\\values-cs.xml",
                     "from": {
-                        "startLines": "2,5,9,12,15,18,22,26,29,32,35,39,42,46",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,228,456,614,764,936,1164,1406,1577,1751,1920,2193,2393,2597",
-                        "endLines": "4,8,11,14,17,21,25,28,31,34,38,41,45,49",
-                        "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12,12,12",
-                        "endOffsets": "223,451,609,759,931,1159,1401,1572,1746,1915,2188,2388,2592,2921"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "1955",
+                        "endColumns": "100",
+                        "endOffsets": "2051"
                     }
                 }
             ]
@@ -1261,33 +1261,33 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-cs_values-cs.arsc.flat",
+            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-v17_values-v17.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-cs\\values-cs.xml",
+                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-v17\\values-v17.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,212,314,423,509,614,731,812,893,977,1081,1190,1289,1395,1505,1612,1775,1873",
-                        "endColumns": "106,101,108,85,104,116,80,80,83,103,108,98,105,109,106,162,97,81",
-                        "endOffsets": "207,309,418,504,609,726,807,888,972,1076,1185,1284,1390,1500,1607,1770,1868,1950"
+                        "startLines": "2,5,9,12,15,18,22,26,29,32,35,39,42,46",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,228,456,614,764,936,1164,1406,1577,1751,1920,2193,2393,2597",
+                        "endLines": "4,8,11,14,17,21,25,28,31,34,38,41,45,49",
+                        "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12,12,12",
+                        "endOffsets": "223,451,609,759,931,1159,1401,1572,1746,1915,2188,2388,2592,2921"
                     }
-                },
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\Jorge-Practicas\\Desktop\\Gnommo_Practicas_Christian\\WidgetEstados\\app\\build\\intermediates\\res\\merged\\debug\\values-watch-v20_values-watch-v20.arsc.flat",
+            "map": [
                 {
-                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\8e23feb81ec80a5e7b5965870e7f7df4\\res\\values-cs\\values-cs.xml",
+                    "source": "C:\\Users\\Jorge-Practicas\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\5bc888b3f90f88660ea1315903716c02\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "1955",
-                        "endColumns": "100",
-                        "endOffsets": "2051"
+                        "startLines": "2,5,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,214,385",
+                        "endLines": "4,7,10",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "209,380,553"
                     }
                 }
             ]

@@ -13,7 +13,7 @@ import com.gnommostudios.widgetestados.views.widgets.ChangeStateWidget
 import kotlinx.android.synthetic.main.activity_main.*
 import android.content.SharedPreferences
 import android.telephony.TelephonyManager
-import com.gnommostudios.widgetestados.views.widgets.ListTestWidget
+import com.gnommostudios.widgetestados.views.widgets.ListWidget
 import java.util.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -106,11 +106,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         listPhonesPrefsEditor.apply()
 
-        val intent = Intent(this, ListTestWidget::class.java)
+        val intent = Intent(this, ListWidget::class.java)
         intent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
 
         val ids = AppWidgetManager.getInstance(application)
-                .getAppWidgetIds(ComponentName(application, ListTestWidget::class.java))
+                .getAppWidgetIds(ComponentName(application, ListWidget::class.java))
 
         intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
         sendBroadcast(intent)

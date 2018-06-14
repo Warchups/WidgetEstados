@@ -10,9 +10,7 @@ import com.gnommostudios.widgetestados.R
 
 import java.util.ArrayList
 
-
-
-class WidgetDataProvider(context: Context, intent: Intent) : RemoteViewsService.RemoteViewsFactory {
+class WidgetDataProvider(context: Context) : RemoteViewsService.RemoteViewsFactory {
 
     private var mCollection: MutableList<String> = ArrayList()
     private var mContext: Context? = null

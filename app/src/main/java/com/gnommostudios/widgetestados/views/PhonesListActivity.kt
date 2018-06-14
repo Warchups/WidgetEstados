@@ -79,6 +79,7 @@ class PhonesListActivity : AppCompatActivity(), AdapterView.OnItemClickListener 
         startActivity(Intent(Intent.ACTION_CALL, Uri.parse("tel:${phonesList[position].split(" - ")[1]}")))
     }
 
+    @Suppress("UNCHECKED_CAST")
     private fun refreshList() {
         phonesList.clear()
         map = listPhonesPrefs!!.all as Map<String, String>
@@ -86,7 +87,7 @@ class PhonesListActivity : AppCompatActivity(), AdapterView.OnItemClickListener 
         for (i in map!!.keys)
             phonesList.add("${i.split("_")[1]} - ${map!![i]!!}")
 
-        var adapter = listViewPhones.adapter as ArrayAdapter<String>
+        val adapter = listViewPhones.adapter as ArrayAdapter<String>
         adapter.notifyDataSetChanged()
     }
 }

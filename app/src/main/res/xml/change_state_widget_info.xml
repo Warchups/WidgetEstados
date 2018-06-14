@@ -3,7 +3,7 @@
     android:initialKeyguardLayout="@layout/change_state_widget"
     android:initialLayout="@layout/change_state_widget"
     android:minHeight="40dp"
-    android:minWidth="180dp"
+    android:minWidth="250dp"
     android:previewImage="@drawable/buttons_appwidget_preview"
     android:updatePeriodMillis="0"
     android:widgetCategory="home_screen"/>

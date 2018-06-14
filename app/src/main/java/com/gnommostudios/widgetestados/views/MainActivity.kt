@@ -13,6 +13,7 @@ import com.gnommostudios.widgetestados.views.widgets.ChangeStateWidget
 import kotlinx.android.synthetic.main.activity_main.*
 import android.content.SharedPreferences
 import android.telephony.TelephonyManager
+import android.util.Log
 import com.gnommostudios.widgetestados.views.widgets.ListWidget
 import java.util.*
 
@@ -84,12 +85,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val r = Random()
         for (i in 0..7) {
-            number += r.nextInt(9)
+            number += r.nextInt(10)
         }
 
         val name = randomNames[r.nextInt(randomNames.size)]
 
-        //Log.i(name, number)
+        Log.i(name, number)
 
         mapPhones[name] = number
 
@@ -106,6 +107,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         listPhonesPrefsEditor.apply()
 
+        //Mensaje para que actualice la lista en el widget
         val intent = Intent(this, ListWidget::class.java)
         intent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
 
@@ -135,6 +137,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun changeButtons() {
         state = statePreferences!!.getString("state", MyPhoneStates.IDLE)
 
+        //Mensaje de broadcast para que cambie los botones en el widget
         val intent = Intent(this, ChangeStateWidget::class.java)
         intent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
 

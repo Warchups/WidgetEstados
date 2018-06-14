@@ -39,8 +39,10 @@ class WidgetDataProvider(context: Context) : RemoteViewsService.RemoteViewsFacto
 
     override fun getViewAt(position: Int): RemoteViews {
         val phone = mCollection[position]
+
         val view = RemoteViews(mContext!!.packageName,
                 R.layout.element_list)
+
         view.setTextViewText(R.id.phoneTxt, mCollection[position])
 
         setOnClickFillInIntent(view, phone)
@@ -71,7 +73,6 @@ class WidgetDataProvider(context: Context) : RemoteViewsService.RemoteViewsFacto
 
         for (i in map.keys)
             mCollection.add("${i.split("_")[1]} - ${map[i]!!}")
-
 
     }
 
